@@ -37,6 +37,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		44DD6AAB281F103F001FE38F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4DBBB270281C3F99006B8236 /* Assets.xcassets */,
+				4DBBB26D281C3F96006B8236 /* Main.storyboard */,
+				4DBBB272281C3F99006B8236 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		44DD6AAD281F1063001FE38F /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				4DBBB26B281C3F96006B8236 /* ViewController.swift */,
+				4DBBB267281C3F96006B8236 /* AppDelegate.swift */,
+				4DBBB269281C3F96006B8236 /* SceneDelegate.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
 		4DBBB25B281C3F96006B8236 = {
 			isa = PBXGroup;
 			children = (
@@ -56,12 +76,8 @@
 		4DBBB266281C3F96006B8236 /* homework_camera_collection */ = {
 			isa = PBXGroup;
 			children = (
-				4DBBB267281C3F96006B8236 /* AppDelegate.swift */,
-				4DBBB269281C3F96006B8236 /* SceneDelegate.swift */,
-				4DBBB26B281C3F96006B8236 /* ViewController.swift */,
-				4DBBB26D281C3F96006B8236 /* Main.storyboard */,
-				4DBBB270281C3F99006B8236 /* Assets.xcassets */,
-				4DBBB272281C3F99006B8236 /* LaunchScreen.storyboard */,
+				44DD6AAD281F1063001FE38F /* Source */,
+				44DD6AAB281F103F001FE38F /* Resources */,
 				4DBBB275281C3F99006B8236 /* Info.plist */,
 			);
 			path = homework_camera_collection;
