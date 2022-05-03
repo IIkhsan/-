@@ -14,6 +14,8 @@
 		4DBBB26F281C3F96006B8236 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBB26D281C3F96006B8236 /* Main.storyboard */; };
 		4DBBB271281C3F99006B8236 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBB270281C3F99006B8236 /* Assets.xcassets */; };
 		4DBBB274281C3F99006B8236 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBB272281C3F99006B8236 /* LaunchScreen.storyboard */; };
+		A234FFE8281FFF2700B18502 /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A234FFE7281FFF2600B18502 /* CustomAnnotation.swift */; };
+		A234FFEA2820035300B18502 /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A234FFE92820035300B18502 /* CustomAnnotationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		4DBBB275281C3F99006B8236 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63E7BBD6DE9AF8F345255DE4 /* Pods-homework_camera_collection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-homework_camera_collection.debug.xcconfig"; path = "Target Support Files/Pods-homework_camera_collection/Pods-homework_camera_collection.debug.xcconfig"; sourceTree = "<group>"; };
 		8C933E4A21F2D759E303ACF4 /* Pods_homework_camera_collection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_homework_camera_collection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A234FFE7281FFF2600B18502 /* CustomAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
+		A234FFE92820035300B18502 /* CustomAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,8 @@
 				4DBBB270281C3F99006B8236 /* Assets.xcassets */,
 				4DBBB272281C3F99006B8236 /* LaunchScreen.storyboard */,
 				4DBBB275281C3F99006B8236 /* Info.plist */,
+				A234FFE92820035300B18502 /* CustomAnnotationView.swift */,
+				A234FFE7281FFF2600B18502 /* CustomAnnotation.swift */,
 			);
 			path = homework_camera_collection;
 			sourceTree = "<group>";
@@ -207,8 +213,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DBBB26C281C3F96006B8236 /* MapViewController.swift in Sources */,
+				A234FFEA2820035300B18502 /* CustomAnnotationView.swift in Sources */,
 				4DBBB268281C3F96006B8236 /* AppDelegate.swift in Sources */,
 				4DBBB26A281C3F96006B8236 /* SceneDelegate.swift in Sources */,
+				A234FFE8281FFF2700B18502 /* CustomAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
