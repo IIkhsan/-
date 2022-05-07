@@ -8,7 +8,6 @@
 import UIKit
 import MapKit
 import PhotosUI
-import AVFoundation
 
 final class ViewController: UIViewController {
     // MARK: UI
@@ -31,11 +30,16 @@ final class ViewController: UIViewController {
         return mapView
     }()
     
+    // MARK: Dependencies
+    
+    private let dataManager = DataManager()
+    
     // MARK: Life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        dataManager.delegate = self
         configureNavigationBar()
         configureLayout()
     }
@@ -79,54 +83,14 @@ final class ViewController: UIViewController {
         present(alertController, animated: true)
     }
     
-    private func checkPhotoUsagePermission(completion: @escaping (Bool) -> Void) {
-        switch PHPhotoLibrary.authorizationStatus() {
-        case .authorized, .limited:
-            completion(true)
-        case .notDetermined:
-            PHPhotoLibrary.requestAuthorization(for: .readWrite) { status in
-                DispatchQueue.main.async {
-                    completion(status == .authorized || status == .limited)
-                }
-            }
-        default:
-            completion(false)
-        }
-    }
-    
-    private func checkCameraUsagePermission(completion: @escaping (Bool) -> Void) {
-        switch AVCaptureDevice.authorizationStatus(for: .video) {
-        case .authorized:
-            completion(true)
-        case .notDetermined:
-            AVCaptureDevice.requestAccess(for: .video) { accessWasGiven in
-                DispatchQueue.main.async {
-                    completion(accessWasGiven)
-                }
-            }
-        default:
-            completion(false)
-        }
-    }
-    
     private func getPhotoFromLibrary() {
-        checkPhotoUsagePermission { [weak self] isPermissionGranted in
-            guard isPermissionGranted else { return }
-            var config = PHPickerConfiguration(photoLibrary: .shared())
-            config.filter = .images
-            let photoPickerViewController = PHPickerViewController(configuration: config)
-            photoPickerViewController.delegate = self
-            self?.present(photoPickerViewController, animated: true)
+        dataManager.getPhotoFromLibrary { [weak self] picker in
+            self?.present(picker, animated: true)
         }
     }
     
     private func getPhotoFromCamera() {
-        checkCameraUsagePermission { [weak self] isPermissionGranted in
-            guard isPermissionGranted else { return }
-            let picker = UIImagePickerController()
-            picker.sourceType = .camera
-            picker.allowsEditing = true
-            picker.delegate = self
+        dataManager.getPhotoFromCamera { [weak self] picker in
             self?.present(picker, animated: true)
         }
     }
