@@ -14,25 +14,39 @@ final class ViewController: UIViewController {
     
     private lazy var mapView: MKMapView = {
         let mapView = MKMapView()
-        mapView.registerAnnotationView(MKMarkerAnnotationView.self)
-        // TODO: - удалить
-        mapView.addAnnotation(TitleImageAnnotation(
-            coordinate: CLLocationCoordinate2D(latitude: 37.7749295, longitude: -122.4194155),
-            title: "San Francisco",
-            image: nil,
-            subtitle: "Big tech companies valley")
-        )
-        mapView.setRegion(MKCoordinateRegion(
-            center: CLLocationCoordinate2D(latitude: 37.786_996, longitude: -122.440_100),
-            span: MKCoordinateSpan(latitudeDelta: 0.15, longitudeDelta: 0.15)
-        ), animated: true)
         mapView.delegate = self
+        // TODO: - удалить
+        mapView.addAnnotations(annotations)
+        mapView.setRegion(.centerRegion, animated: true)
+        mapView.registerAnnotationView(MKMarkerAnnotationView.self)
         return mapView
     }()
     
-    // MARK: Dependencies
+    private lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.backgroundColor = .clear
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.register(TitleImageCollectionViewCell.self)
+        return collectionView
+    }()
+    
+    // MARK: Dependencies & properties
     
     private let dataManager = DataManager()
+    // TODO: - очистить этот массив
+    private var annotations: [TitleImageAnnotation] = [
+        TitleImageAnnotation(
+            coordinate: CLLocationCoordinate2D(latitude: 37.7749295, longitude: -122.4194155),
+            dateTitle: "San Francisco",
+            image: UIImage(systemName: "building.fill"),
+            subtitle: "Big tech companies valley"
+        )
+    ]
     
     // MARK: Life cycle
     
@@ -61,77 +75,97 @@ final class ViewController: UIViewController {
         mapView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             mapView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            mapView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            mapView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            mapView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            mapView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             mapView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+        
+        view.addSubview(collectionView)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor,
+                                                    constant: LayoutConstants.collectionViewInset),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor,
+                                                     constant: -LayoutConstants.collectionViewInset),
+            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,
+                                                   constant: LayoutConstants.collectionViewInset),
+            collectionView.heightAnchor.constraint(equalToConstant: LayoutConstants.collectionViewCellSize)
         ])
     }
     
     // MARK: Actions
     
     @objc private func didTapAddPhotoButton() {
-        let alertController = UIAlertController(title: "Выберите источик", message: nil, preferredStyle: .actionSheet)
-        alertController.addAction(UIAlertAction(title: "Галерея", style: .default, handler: { _ in
-            self.getPhotoFromLibrary()
-        }))
-        alertController.addAction(UIAlertAction(title: "Камера", style: .default, handler: { _ in
-            self.getPhotoFromCamera()
-        }))
-        alertController.addAction(UIAlertAction(title: "Отменить", style: .cancel, handler: { _ in
-            alertController.dismiss(animated: true)
-        }))
+        let alertController = UIAlertController(
+            title: "Выберите источник",
+            message: nil,
+            preferredStyle: .actionSheet
+        )
+        let alertActions: [UIAlertAction] = [
+            .init(title: "Галерея", style: .default) { _ in
+                self.dataManager.getPhotoFromLibrary { [weak self] picker in
+                    self?.present(picker, animated: true)
+                }
+            },
+            .init(title: "Камера", style: .default) { _ in
+                self.dataManager.getPhotoFromCamera { [weak self] picker in
+                    self?.present(picker, animated: true)
+                }
+            },
+            .init(title: "Отменить", style: .cancel) { _ in
+                alertController.dismiss(animated: true)
+            }
+        ]
+        alertActions.forEach { alertController.addAction($0) }
         present(alertController, animated: true)
     }
-    
-    private func getPhotoFromLibrary() {
-        dataManager.getPhotoFromLibrary { [weak self] picker in
-            self?.present(picker, animated: true)
-        }
-    }
-    
-    private func getPhotoFromCamera() {
-        dataManager.getPhotoFromCamera { [weak self] picker in
-            self?.present(picker, animated: true)
-        }
-    }
-    
-    private func addAnnotation(image: UIImage) {
-        let imageAnnotation = TitleImageAnnotation(
+}
+
+// MARK: - DataManagerDelegate
+
+extension ViewController: DataManagerDelegate {
+    func didChooseImage(_ image: UIImage) {
+        let annotation = TitleImageAnnotation(
             coordinate: mapView.centerCoordinate,
-            title: Date().formatted(),
+            dateTitle: Date().formatted(),
             image: image
         )
-        self.mapView.addAnnotation(imageAnnotation)
+        mapView.addAnnotation(annotation)
+        annotations.append(annotation)
+        collectionView.reloadData()
     }
 }
 
-// MARK: - PHPickerViewControllerDelegate
+// MARK: - UICollectionViewDelegateFlowLayout & UICollectionViewDelegate
 
-extension ViewController: PHPickerViewControllerDelegate {
-    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
-        picker.dismiss(animated: true, completion: nil)
-        
-        results.forEach { result in
-            result.itemProvider.loadObject(ofClass: UIImage.self) { [weak self] reading, error in
-                guard let image = reading as? UIImage, error == nil else { return }
-                DispatchQueue.main.async {
-                    self?.addAnnotation(image: image)
-                }
-            }
-        }
+extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAt indexPath: IndexPath
+    ) -> CGSize {
+        return CGSize(
+            width: LayoutConstants.collectionViewCellSize,
+            height: LayoutConstants.collectionViewCellSize
+        )
     }
 }
 
-// MARK: - UIImagePickerControllerDelegate & UINavigationControllerDelegate
+// MARK: - UICollectionViewDataSource
 
-extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        picker.dismiss(animated: true, completion: nil)
-        
-        guard let image = info[.editedImage] as? UIImage else { return }
-        DispatchQueue.main.async {
-            self.addAnnotation(image: image)
-        }
+extension ViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        annotations.count
+    }
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
+        let cell = collectionView.dequeue(TitleImageCollectionViewCell.self, for: indexPath)
+        let annotation = annotations[indexPath.row]
+        cell.configure(image: annotation.image, title: annotation.title, subtitle: annotation.subtitle)
+        return cell
     }
 }
 
@@ -153,4 +187,18 @@ extension ViewController: MKMapViewDelegate {
         annotationView.leftCalloutAccessoryView = imageView
         return annotationView
     }
+}
+
+// MARK: - Constants
+
+private extension MKCoordinateRegion {
+    static let centerRegion = MKCoordinateRegion(
+        center: CLLocationCoordinate2D(latitude: 37.786_996, longitude: -122.440_100),
+        span: MKCoordinateSpan(latitudeDelta: 0.15, longitudeDelta: 0.15)
+    )
+}
+
+private enum LayoutConstants {
+    static let collectionViewInset: CGFloat = 20
+    static let collectionViewCellSize: CGFloat = 200
 }

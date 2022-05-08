@@ -13,9 +13,9 @@ final class TitleImageAnnotation: NSObject, MKAnnotation {
     var image: UIImage?
     var subtitle: String?
     
-    init(coordinate: CLLocationCoordinate2D, title: String?, image: UIImage?, subtitle: String? = nil) {
+    init(coordinate: CLLocationCoordinate2D, dateTitle: String, image: UIImage?, subtitle: String? = nil) {
         self.coordinate = coordinate
-        self.title = title
+        self.title = "date: " + dateTitle
         self.image = image
         
         if subtitle == nil {
