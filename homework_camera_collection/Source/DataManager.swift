@@ -9,8 +9,12 @@ import Foundation
 import PhotosUI
 import AVFoundation
 
-final class DataManager {
-    weak var delegate: (PHPickerViewControllerDelegate & UIImagePickerControllerDelegate & UINavigationControllerDelegate)?
+protocol DataManagerDelegate: AnyObject {
+    func didChooseImage(_ image: UIImage)
+}
+
+final class DataManager: NSObject {
+    weak var delegate: DataManagerDelegate?
     
     private func checkPhotoUsagePermission(completion: @escaping (Bool) -> Void) {
         switch PHPhotoLibrary.authorizationStatus() {
@@ -48,7 +52,7 @@ final class DataManager {
             var config = PHPickerConfiguration(photoLibrary: .shared())
             config.filter = .images
             let photoPickerViewController = PHPickerViewController(configuration: config)
-            photoPickerViewController.delegate = self?.delegate
+            photoPickerViewController.delegate = self
             completion(photoPickerViewController)
         }
     }
@@ -59,8 +63,41 @@ final class DataManager {
             let picker = UIImagePickerController()
             picker.sourceType = .camera
             picker.allowsEditing = true
-            picker.delegate = self?.delegate
+            picker.delegate = self
             completion(picker)
+        }
+    }
+}
+
+// MARK: - PHPickerViewControllerDelegate
+
+extension DataManager: PHPickerViewControllerDelegate {
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        picker.dismiss(animated: true, completion: nil)
+        
+        results.forEach { result in
+            result.itemProvider.loadObject(ofClass: UIImage.self) { [weak self] reading, error in
+                guard let image = reading as? UIImage, error == nil else { return }
+                DispatchQueue.main.async {
+                    self?.delegate?.didChooseImage(image)
+                }
+            }
+        }
+    }
+}
+
+// MARK: - UIImagePickerControllerDelegate & UINavigationControllerDelegate
+
+extension DataManager: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(
+        _ picker: UIImagePickerController,
+        didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]
+    ) {
+        picker.dismiss(animated: true, completion: nil)
+        
+        guard let image = info[.editedImage] as? UIImage else { return }
+        DispatchQueue.main.async {
+            self.delegate?.didChooseImage(image)
         }
     }
 }
