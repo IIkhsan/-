@@ -15,10 +15,8 @@ final class ViewController: UIViewController {
     private lazy var mapView: MKMapView = {
         let mapView = MKMapView()
         mapView.delegate = self
-        // TODO: - удалить
-        mapView.addAnnotations(annotations)
         mapView.setRegion(.centerRegion, animated: true)
-        mapView.registerAnnotationView(MKMarkerAnnotationView.self)
+        mapView.registerAnnotationView(TitleImageAnnotationView.self)
         return mapView
     }()
     
@@ -57,7 +55,6 @@ final class ViewController: UIViewController {
         collectionView.backgroundColor = .clear
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.showsVerticalScrollIndicator = false
-        collectionView.alwaysBounceVertical = false
         collectionView.register(TitleImageCollectionViewCell.self)
         return collectionView
     }()
@@ -65,27 +62,7 @@ final class ViewController: UIViewController {
     // MARK: Dependencies & properties
     
     private let dataManager = DataManager()
-    // TODO: - очистить этот массив
-    private var annotations: [TitleImageAnnotation] = [
-        TitleImageAnnotation(
-            coordinate: CLLocationCoordinate2D(latitude: 37.7749295, longitude: -122.4194155),
-            dateTitle: "San Francisco",
-            image: UIImage(systemName: "building.fill"),
-            subtitle: "Big tech companies valley"
-        ),
-        TitleImageAnnotation(
-            coordinate: CLLocationCoordinate2D(latitude: 37.79170437706403, longitude: -122.4401),
-            dateTitle: "5/9/2022, 3:40 PM",
-            image: UIImage(systemName: "trash.slash.fill"),
-            subtitle: "37.79, -122.44"
-        ),
-        TitleImageAnnotation(
-            coordinate: CLLocationCoordinate2D(latitude: 37.78286309205995, longitude: -122.4657993261174),
-            dateTitle: "5/9/2022, 3:42 PM",
-            image: UIImage(systemName: "doc.fill"),
-            subtitle: "37.78, -122.47"
-        )
-    ]
+    private var annotations: [TitleImageAnnotation] = []
     
     // MARK: Life cycle
     
@@ -124,10 +101,9 @@ final class ViewController: UIViewController {
         NSLayoutConstraint.activate([
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor,
                                                     constant: .collectionViewInset),
-            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor,
-                                                     constant: -.collectionViewInset),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,
-                                                   constant: .collectionViewInset),
+                                                   constant: -.collectionViewInset),
             collectionView.heightAnchor.constraint(equalToConstant: .collectionViewHeight)
         ])
     }
@@ -197,19 +173,26 @@ extension ViewController: UICollectionViewDataSource {
 
 extension ViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        guard !annotation.isKind(of: MKUserLocation.self),
-              let annotation = annotation as? TitleImageAnnotation else { return nil }
+        guard !(annotation is MKUserLocation) else { return nil }
+        
         let annotationView = mapView.dequeueReusableAnnotationView(
-            annotationViewClass: MKMarkerAnnotationView.self,
+            annotationViewClass: TitleImageAnnotationView.self,
             for: annotation
         )
-        
-        annotationView.canShowCallout = true
-        let imageView = UIImageView(image: annotation.image)
-        imageView.frame = CGRect(origin: .zero, size: CGSize(width: 50, height: 50))
-        
-        annotationView.leftCalloutAccessoryView = imageView
+        annotationView.annotation = annotation
         return annotationView
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        guard let view = view as? TitleImageAnnotationView else { return }
+        view.markerTintColor = view.markerTintColor?.withAlphaComponent(0)
+        view.glyphTintColor = .clear
+    }
+    
+    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+        guard let view = view as? TitleImageAnnotationView else { return }
+        view.markerTintColor = view.markerTintColor?.withAlphaComponent(1)
+        view.glyphTintColor = nil
     }
 }
 

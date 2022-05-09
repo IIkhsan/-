@@ -71,6 +71,12 @@ final class TitleImageCollectionViewCell: UICollectionViewCell {
             height: contentView.frame.height - 2 * LayoutConstants.stackViewInset
         )
     }
+    
+    override func prepareForReuse() {
+        imageView.image = nil
+        titleLabel.text = nil
+        subtitleLabel.text = nil
+    }
 }
 
 // MARK: - Constants
