@@ -22,15 +22,42 @@ final class ViewController: UIViewController {
         return mapView
     }()
     
-    private lazy var collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
+    private lazy var compositionalLayout: UICollectionViewCompositionalLayout = {
+        let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(.collectionLayoutItemFractionalWidth),
+            heightDimension: .fractionalHeight(.collectionLayoutItemFractionalHeight)
+        ))
         
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.delegate = self
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(.collectionLayoutGroupFractionalWidth),
+            heightDimension: .fractionalHeight(.collectionLayoutGroupFractionalHeight)
+        ), subitems: [item])
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = .zero
+        section.orthogonalScrollingBehavior = .continuous
+        section.visibleItemsInvalidationHandler = { (items, offset, environment) in
+            items.forEach { item in
+                let distanceFromLeft = item.frame.minX - offset.x
+                if distanceFromLeft > 0 {
+                    let containerWidth = environment.container.contentSize.width
+                    let scale = max(1 - distanceFromLeft / containerWidth / 3, .minItemScale)
+                    item.transform = CGAffineTransform(scaleX: scale, y: scale)
+                    item.center.y = item.bounds.height - item.frame.height / 2
+                }
+            }
+        }
+        
+        return UICollectionViewCompositionalLayout(section: section)
+    }()
+    
+    private lazy var collectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: compositionalLayout)
         collectionView.dataSource = self
         collectionView.backgroundColor = .clear
         collectionView.showsHorizontalScrollIndicator = false
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.alwaysBounceVertical = false
         collectionView.register(TitleImageCollectionViewCell.self)
         return collectionView
     }()
@@ -45,6 +72,18 @@ final class ViewController: UIViewController {
             dateTitle: "San Francisco",
             image: UIImage(systemName: "building.fill"),
             subtitle: "Big tech companies valley"
+        ),
+        TitleImageAnnotation(
+            coordinate: CLLocationCoordinate2D(latitude: 37.79170437706403, longitude: -122.4401),
+            dateTitle: "5/9/2022, 3:40 PM",
+            image: UIImage(systemName: "trash.slash.fill"),
+            subtitle: "37.79, -122.44"
+        ),
+        TitleImageAnnotation(
+            coordinate: CLLocationCoordinate2D(latitude: 37.78286309205995, longitude: -122.4657993261174),
+            dateTitle: "5/9/2022, 3:42 PM",
+            image: UIImage(systemName: "doc.fill"),
+            subtitle: "37.78, -122.47"
         )
     ]
     
@@ -84,12 +123,12 @@ final class ViewController: UIViewController {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor,
-                                                    constant: LayoutConstants.collectionViewInset),
+                                                    constant: .collectionViewInset),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor,
-                                                     constant: -LayoutConstants.collectionViewInset),
+                                                     constant: -.collectionViewInset),
             collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,
-                                                   constant: LayoutConstants.collectionViewInset),
-            collectionView.heightAnchor.constraint(equalToConstant: LayoutConstants.collectionViewCellSize)
+                                                   constant: .collectionViewInset),
+            collectionView.heightAnchor.constraint(equalToConstant: .collectionViewHeight)
         ])
     }
     
@@ -132,23 +171,7 @@ extension ViewController: DataManagerDelegate {
         )
         mapView.addAnnotation(annotation)
         annotations.append(annotation)
-        let lastAnnotationIndex = annotations.count - 1
-        collectionView.insertItems(at: [IndexPath(item: lastAnnotationIndex, section: 0)])
-    }
-}
-
-// MARK: - UICollectionViewDelegateFlowLayout & UICollectionViewDelegate
-
-extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
-    func collectionView(
-        _ collectionView: UICollectionView,
-        layout collectionViewLayout: UICollectionViewLayout,
-        sizeForItemAt indexPath: IndexPath
-    ) -> CGSize {
-        return CGSize(
-            width: LayoutConstants.collectionViewCellSize,
-            height: LayoutConstants.collectionViewCellSize
-        )
+        collectionView.reloadData()
     }
 }
 
@@ -199,7 +222,14 @@ private extension MKCoordinateRegion {
     )
 }
 
-private enum LayoutConstants {
+private extension CGFloat {
     static let collectionViewInset: CGFloat = 20
-    static let collectionViewCellSize: CGFloat = 200
+    static let collectionViewHeight: CGFloat = 200
+    
+    static let collectionLayoutItemFractionalWidth: CGFloat = 0.95
+    static let collectionLayoutItemFractionalHeight: CGFloat = 1
+    static let collectionLayoutGroupFractionalWidth: CGFloat = 0.4
+    static let collectionLayoutGroupFractionalHeight: CGFloat = 1
+    
+    static let minItemScale: CGFloat = 0.8
 }

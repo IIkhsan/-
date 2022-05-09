@@ -18,6 +18,7 @@ final class TitleImageCollectionViewCell: UICollectionViewCell {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
+        label.font = .preferredFont(forTextStyle: .footnote)
         label.textAlignment = .center
         label.numberOfLines = 0
         return label
@@ -25,6 +26,7 @@ final class TitleImageCollectionViewCell: UICollectionViewCell {
     
     private lazy var subtitleLabel: UILabel = {
         let label = UILabel()
+        label.font = .preferredFont(forTextStyle: .footnote)
         label.textAlignment = .center
         label.numberOfLines = 0
         return label
@@ -78,7 +80,7 @@ private extension UIColor {
 }
 
 private enum LayoutConstants {
-    static let cornerRadius: CGFloat = 30
-    static let stackViewInset: CGFloat = 20
-    static let stackViewSpacing: CGFloat = 8
+    static let cornerRadius: CGFloat = 25
+    static let stackViewInset: CGFloat = 4
+    static let stackViewSpacing: CGFloat = 6
 }
