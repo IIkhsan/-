@@ -132,7 +132,8 @@ extension ViewController: DataManagerDelegate {
         )
         mapView.addAnnotation(annotation)
         annotations.append(annotation)
-        collectionView.reloadData()
+        let lastAnnotationIndex = annotations.count - 1
+        collectionView.insertItems(at: [IndexPath(item: lastAnnotationIndex, section: 0)])
     }
 }
 
