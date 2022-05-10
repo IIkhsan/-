@@ -13,6 +13,10 @@
 		4DBBB26F281C3F96006B8236 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBB26D281C3F96006B8236 /* Main.storyboard */; };
 		4DBBB271281C3F99006B8236 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBB270281C3F99006B8236 /* Assets.xcassets */; };
 		4DBBB274281C3F99006B8236 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBB272281C3F99006B8236 /* LaunchScreen.storyboard */; };
+		749A29EA282AEAEF0015FE45 /* ImageInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749A29E9282AEAEF0015FE45 /* ImageInfoCollectionViewCell.swift */; };
+		749A29EC282AEBD60015FE45 /* ImageInfoAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749A29EB282AEBD60015FE45 /* ImageInfoAnnotation.swift */; };
+		749A29EE282AF0C40015FE45 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749A29ED282AF0C40015FE45 /* ImageManager.swift */; };
+		749A29F0282B19080015FE45 /* ImageInfoAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749A29EF282B19080015FE45 /* ImageInfoAnnotationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		4DBBB270281C3F99006B8236 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DBBB273281C3F99006B8236 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4DBBB275281C3F99006B8236 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		749A29E9282AEAEF0015FE45 /* ImageInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInfoCollectionViewCell.swift; sourceTree = "<group>"; };
+		749A29EB282AEBD60015FE45 /* ImageInfoAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInfoAnnotation.swift; sourceTree = "<group>"; };
+		749A29ED282AF0C40015FE45 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		749A29EF282B19080015FE45 /* ImageInfoAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInfoAnnotationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,51 @@
 		4DBBB266281C3F96006B8236 /* homework_camera_collection */ = {
 			isa = PBXGroup;
 			children = (
+				74E5059C28305B3500C70586 /* Annotation */,
+				74E5059B28305B2000C70586 /* ViewControllers */,
+				74E5059A28305B1200C70586 /* Cells */,
+				74E5059928305AFD00C70586 /* Managers */,
 				4DBBB267281C3F96006B8236 /* AppDelegate.swift */,
 				4DBBB269281C3F96006B8236 /* SceneDelegate.swift */,
-				4DBBB26B281C3F96006B8236 /* ViewController.swift */,
 				4DBBB26D281C3F96006B8236 /* Main.storyboard */,
 				4DBBB270281C3F99006B8236 /* Assets.xcassets */,
 				4DBBB272281C3F99006B8236 /* LaunchScreen.storyboard */,
 				4DBBB275281C3F99006B8236 /* Info.plist */,
 			);
 			path = homework_camera_collection;
+			sourceTree = "<group>";
+		};
+		74E5059928305AFD00C70586 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				749A29ED282AF0C40015FE45 /* ImageManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		74E5059A28305B1200C70586 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				749A29E9282AEAEF0015FE45 /* ImageInfoCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		74E5059B28305B2000C70586 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4DBBB26B281C3F96006B8236 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		74E5059C28305B3500C70586 /* Annotation */ = {
+			isa = PBXGroup;
+			children = (
+				749A29EB282AEBD60015FE45 /* ImageInfoAnnotation.swift */,
+				749A29EF282B19080015FE45 /* ImageInfoAnnotationView.swift */,
+			);
+			path = Annotation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +182,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				749A29EC282AEBD60015FE45 /* ImageInfoAnnotation.swift in Sources */,
 				4DBBB26C281C3F96006B8236 /* ViewController.swift in Sources */,
 				4DBBB268281C3F96006B8236 /* AppDelegate.swift in Sources */,
+				749A29EE282AF0C40015FE45 /* ImageManager.swift in Sources */,
+				749A29EA282AEAEF0015FE45 /* ImageInfoCollectionViewCell.swift in Sources */,
+				749A29F0282B19080015FE45 /* ImageInfoAnnotationView.swift in Sources */,
 				4DBBB26A281C3F96006B8236 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,7 +265,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -272,7 +320,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
