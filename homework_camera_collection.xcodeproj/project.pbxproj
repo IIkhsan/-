@@ -9,21 +9,32 @@
 /* Begin PBXBuildFile section */
 		4DBBB268281C3F96006B8236 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBBB267281C3F96006B8236 /* AppDelegate.swift */; };
 		4DBBB26A281C3F96006B8236 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBBB269281C3F96006B8236 /* SceneDelegate.swift */; };
-		4DBBB26C281C3F96006B8236 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBBB26B281C3F96006B8236 /* ViewController.swift */; };
+		4DBBB26C281C3F96006B8236 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBBB26B281C3F96006B8236 /* MapViewController.swift */; };
 		4DBBB26F281C3F96006B8236 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBB26D281C3F96006B8236 /* Main.storyboard */; };
 		4DBBB271281C3F99006B8236 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBB270281C3F99006B8236 /* Assets.xcassets */; };
 		4DBBB274281C3F99006B8236 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBB272281C3F99006B8236 /* LaunchScreen.storyboard */; };
+		EB38AF9B28293FA8006429AF /* MapImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38AF9A28293FA8006429AF /* MapImage.swift */; };
+		EB5471722825332D009E4DE3 /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5471712825332D009E4DE3 /* CustomAnnotation.swift */; };
+		EB54717428253338009E4DE3 /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB54717328253338009E4DE3 /* CustomAnnotationView.swift */; };
+		EB81BEC8282AB863009D1B1B /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB81BEC7282AB863009D1B1B /* PhotoCollectionViewCell.swift */; };
+		EB81BECB282ABCDE009D1B1B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EB81BECA282ABCDE009D1B1B /* SnapKit */; };
+		EBCD0A7C2827CC4A00CA5776 /* CustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCD0A7B2827CC4A00CA5776 /* CustomLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4DBBB264281C3F96006B8236 /* homework_camera_collection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = homework_camera_collection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DBBB267281C3F96006B8236 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DBBB269281C3F96006B8236 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4DBBB26B281C3F96006B8236 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4DBBB26B281C3F96006B8236 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		4DBBB26E281C3F96006B8236 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4DBBB270281C3F99006B8236 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DBBB273281C3F99006B8236 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4DBBB275281C3F99006B8236 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB38AF9A28293FA8006429AF /* MapImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapImage.swift; sourceTree = "<group>"; };
+		EB5471712825332D009E4DE3 /* CustomAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
+		EB54717328253338009E4DE3 /* CustomAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
+		EB81BEC7282AB863009D1B1B /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		EBCD0A7B2827CC4A00CA5776 /* CustomLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB81BECB282ABCDE009D1B1B /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +68,100 @@
 		4DBBB266281C3F96006B8236 /* homework_camera_collection */ = {
 			isa = PBXGroup;
 			children = (
-				4DBBB267281C3F96006B8236 /* AppDelegate.swift */,
-				4DBBB269281C3F96006B8236 /* SceneDelegate.swift */,
-				4DBBB26B281C3F96006B8236 /* ViewController.swift */,
-				4DBBB26D281C3F96006B8236 /* Main.storyboard */,
-				4DBBB270281C3F99006B8236 /* Assets.xcassets */,
-				4DBBB272281C3F99006B8236 /* LaunchScreen.storyboard */,
+				EB38AF9928293F99006429AF /* Models */,
+				EBCD0A7A2827CC3100CA5776 /* Layouts */,
+				EBCD0A792826CC6F00CA5776 /* Resources */,
+				EBCD0A732826CC1500CA5776 /* Modules */,
+				EBCD0A782826CC5D00CA5776 /* View */,
+				EBCD0A722826CC0600CA5776 /* Delegates */,
 				4DBBB275281C3F99006B8236 /* Info.plist */,
 			);
 			path = homework_camera_collection;
+			sourceTree = "<group>";
+		};
+		EB38AF9928293F99006429AF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EB38AF9A28293FA8006429AF /* MapImage.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EBCD0A722826CC0600CA5776 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				4DBBB267281C3F96006B8236 /* AppDelegate.swift */,
+				4DBBB269281C3F96006B8236 /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		EBCD0A732826CC1500CA5776 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				EBCD0A742826CC1D00CA5776 /* MapModule */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		EBCD0A742826CC1D00CA5776 /* MapModule */ = {
+			isa = PBXGroup;
+			children = (
+				EBCD0A772826CC4500CA5776 /* Model */,
+				EBCD0A762826CC3B00CA5776 /* View */,
+				EBCD0A752826CC2B00CA5776 /* Controller */,
+			);
+			path = MapModule;
+			sourceTree = "<group>";
+		};
+		EBCD0A752826CC2B00CA5776 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4DBBB26B281C3F96006B8236 /* MapViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		EBCD0A762826CC3B00CA5776 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EB54717328253338009E4DE3 /* CustomAnnotationView.swift */,
+				EB81BEC7282AB863009D1B1B /* PhotoCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EBCD0A772826CC4500CA5776 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EB5471712825332D009E4DE3 /* CustomAnnotation.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EBCD0A782826CC5D00CA5776 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4DBBB26D281C3F96006B8236 /* Main.storyboard */,
+				4DBBB272281C3F99006B8236 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EBCD0A792826CC6F00CA5776 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4DBBB270281C3F99006B8236 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EBCD0A7A2827CC3100CA5776 /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				EBCD0A7B2827CC4A00CA5776 /* CustomLayout.swift */,
+			);
+			path = Layouts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +180,9 @@
 			dependencies = (
 			);
 			name = homework_camera_collection;
+			packageProductDependencies = (
+				EB81BECA282ABCDE009D1B1B /* SnapKit */,
+			);
 			productName = homework_camera_collection;
 			productReference = 4DBBB264281C3F96006B8236 /* homework_camera_collection.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +211,9 @@
 				Base,
 			);
 			mainGroup = 4DBBB25B281C3F96006B8236;
+			packageReferences = (
+				EB81BEC9282ABCDE009D1B1B /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 4DBBB265281C3F96006B8236 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,9 +241,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DBBB26C281C3F96006B8236 /* ViewController.swift in Sources */,
+				EBCD0A7C2827CC4A00CA5776 /* CustomLayout.swift in Sources */,
+				EB81BEC8282AB863009D1B1B /* PhotoCollectionViewCell.swift in Sources */,
+				4DBBB26C281C3F96006B8236 /* MapViewController.swift in Sources */,
+				EB38AF9B28293FA8006429AF /* MapImage.swift in Sources */,
+				EB54717428253338009E4DE3 /* CustomAnnotationView.swift in Sources */,
 				4DBBB268281C3F96006B8236 /* AppDelegate.swift in Sources */,
 				4DBBB26A281C3F96006B8236 /* SceneDelegate.swift in Sources */,
+				EB5471722825332D009E4DE3 /* CustomAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,7 +325,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -272,7 +380,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -289,9 +397,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 939KD425D9;
+				DEVELOPMENT_TEAM = 9R54UUJXYS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = homework_camera_collection/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Разрешить доступ к фото";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "разрешит";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Разрешить доступ к библиоетке фото";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -302,7 +413,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.itis.ex.homework-camera-collection";
+				PRODUCT_BUNDLE_IDENTIFIER = com.itis.ex.homework;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -320,6 +431,9 @@
 				DEVELOPMENT_TEAM = 939KD425D9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = homework_camera_collection/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Разрешить доступ к фото";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "разрешит";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Разрешить доступ к библиоетке фото";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -360,6 +474,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EB81BEC9282ABCDE009D1B1B /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EB81BECA282ABCDE009D1B1B /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EB81BEC9282ABCDE009D1B1B /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4DBBB25C281C3F96006B8236 /* Project object */;
 }
