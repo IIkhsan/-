@@ -13,6 +13,11 @@
 		4DBBB26F281C3F96006B8236 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBB26D281C3F96006B8236 /* Main.storyboard */; };
 		4DBBB271281C3F99006B8236 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBB270281C3F99006B8236 /* Assets.xcassets */; };
 		4DBBB274281C3F99006B8236 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBB272281C3F99006B8236 /* LaunchScreen.storyboard */; };
+		E5B9EC73282BE1DD0081FDD7 /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B9EC72282BE1DD0081FDD7 /* CustomAnnotationView.swift */; };
+		E5B9EC75282BE1EE0081FDD7 /* CustomAnnotation .swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B9EC74282BE1EE0081FDD7 /* CustomAnnotation .swift */; };
+		E5B9EC7A282BF5260081FDD7 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B9EC79282BF5260081FDD7 /* CustomCollectionViewCell.swift */; };
+		E5B9EC7C282BF5BA0081FDD7 /* CustomCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B9EC7B282BF5BA0081FDD7 /* CustomCollectionViewFlowLayout.swift */; };
+		E5B9EC7E282BF6BF0081FDD7 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B9EC7D282BF6BF0081FDD7 /* Card.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		4DBBB270281C3F99006B8236 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DBBB273281C3F99006B8236 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4DBBB275281C3F99006B8236 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5B9EC72282BE1DD0081FDD7 /* CustomAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
+		E5B9EC74282BE1EE0081FDD7 /* CustomAnnotation .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomAnnotation .swift"; sourceTree = "<group>"; };
+		E5B9EC79282BF5260081FDD7 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		E5B9EC7B282BF5BA0081FDD7 /* CustomCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		E5B9EC7D282BF6BF0081FDD7 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +66,52 @@
 		4DBBB266281C3F96006B8236 /* homework_camera_collection */ = {
 			isa = PBXGroup;
 			children = (
+				E5B9EC78282BF5080081FDD7 /* Model */,
+				E5B9EC77282BF3950081FDD7 /* Layout */,
+				E5B9EC76282BE5830081FDD7 /* Presentation  */,
+				E5B9EC71282BE1C70081FDD7 /* View */,
 				4DBBB267281C3F96006B8236 /* AppDelegate.swift */,
 				4DBBB269281C3F96006B8236 /* SceneDelegate.swift */,
-				4DBBB26B281C3F96006B8236 /* ViewController.swift */,
 				4DBBB26D281C3F96006B8236 /* Main.storyboard */,
 				4DBBB270281C3F99006B8236 /* Assets.xcassets */,
 				4DBBB272281C3F99006B8236 /* LaunchScreen.storyboard */,
 				4DBBB275281C3F99006B8236 /* Info.plist */,
 			);
 			path = homework_camera_collection;
+			sourceTree = "<group>";
+		};
+		E5B9EC71282BE1C70081FDD7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E5B9EC72282BE1DD0081FDD7 /* CustomAnnotationView.swift */,
+				E5B9EC74282BE1EE0081FDD7 /* CustomAnnotation .swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E5B9EC76282BE5830081FDD7 /* Presentation  */ = {
+			isa = PBXGroup;
+			children = (
+				4DBBB26B281C3F96006B8236 /* ViewController.swift */,
+				E5B9EC79282BF5260081FDD7 /* CustomCollectionViewCell.swift */,
+			);
+			path = "Presentation ";
+			sourceTree = "<group>";
+		};
+		E5B9EC77282BF3950081FDD7 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				E5B9EC7B282BF5BA0081FDD7 /* CustomCollectionViewFlowLayout.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		E5B9EC78282BF5080081FDD7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E5B9EC7D282BF6BF0081FDD7 /* Card.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +186,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DBBB26C281C3F96006B8236 /* ViewController.swift in Sources */,
+				E5B9EC7A282BF5260081FDD7 /* CustomCollectionViewCell.swift in Sources */,
+				E5B9EC7C282BF5BA0081FDD7 /* CustomCollectionViewFlowLayout.swift in Sources */,
 				4DBBB268281C3F96006B8236 /* AppDelegate.swift in Sources */,
+				E5B9EC73282BE1DD0081FDD7 /* CustomAnnotationView.swift in Sources */,
 				4DBBB26A281C3F96006B8236 /* SceneDelegate.swift in Sources */,
+				E5B9EC75282BE1EE0081FDD7 /* CustomAnnotation .swift in Sources */,
+				E5B9EC7E282BF6BF0081FDD7 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
