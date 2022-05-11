@@ -1,24 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="homework_camera_collection" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="MUT-cd-nI6">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FFb-V8-cLu">
+                                <rect key="frame" x="0.0" y="44" width="414" height="67"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="loX-zu-QJ2">
+                                        <rect key="frame" x="280.5" y="18" width="125.5" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Добавить фото"/>
+                                        <connections>
+                                            <action selector="setPhotoToPlace:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hwP-Yj-dAk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="loX-zu-QJ2" secondAttribute="trailing" constant="8" id="0Ba-cL-JBw"/>
+                                    <constraint firstItem="loX-zu-QJ2" firstAttribute="leading" relation="lessThanOrEqual" secondItem="FFb-V8-cLu" secondAttribute="leading" constant="289" id="W84-0w-WgP"/>
+                                    <constraint firstItem="loX-zu-QJ2" firstAttribute="top" secondItem="FFb-V8-cLu" secondAttribute="top" constant="18" id="kdg-YV-D1U"/>
+                                    <constraint firstAttribute="bottom" secondItem="loX-zu-QJ2" secondAttribute="bottom" constant="18" id="uRM-h3-ob7"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MUT-cd-nI6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="0cx-vc-Srl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="MUT-cd-nI6" secondAttribute="bottom" id="Lny-mw-eXR"/>
+                            <constraint firstItem="FFb-V8-cLu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="SD9-aa-YcX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MUT-cd-nI6" secondAttribute="trailing" id="Yf7-aO-85z"/>
+                            <constraint firstItem="FFb-V8-cLu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gKs-8d-qio"/>
+                            <constraint firstItem="MUT-cd-nI6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hi7-9D-bvM"/>
+                            <constraint firstItem="FFb-V8-cLu" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="pdU-xI-jHn"/>
+                            <constraint firstItem="MUT-cd-nI6" firstAttribute="top" secondItem="FFb-V8-cLu" secondAttribute="bottom" constant="-67" id="z6b-iy-Zta"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="MUT-cd-nI6" id="leP-ax-jLv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="128.57142857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

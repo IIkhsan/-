@@ -13,6 +13,12 @@
 		4DBBB26F281C3F96006B8236 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBB26D281C3F96006B8236 /* Main.storyboard */; };
 		4DBBB271281C3F99006B8236 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBB270281C3F99006B8236 /* Assets.xcassets */; };
 		4DBBB274281C3F99006B8236 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBB272281C3F99006B8236 /* LaunchScreen.storyboard */; };
+		A5FA01BA282BF4630005B563 /* CustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FA01B9282BF4630005B563 /* CustomLayout.swift */; };
+		A5FA01BC282BF47E0005B563 /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FA01BB282BF47E0005B563 /* CustomAnnotation.swift */; };
+		A5FA01BE282BF4910005B563 /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FA01BD282BF4910005B563 /* CustomAnnotationView.swift */; };
+		A5FA01C1282BFD7D0005B563 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FA01BF282BFD7D0005B563 /* PhotoCollectionViewCell.swift */; };
+		A5FA01C2282BFD7D0005B563 /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5FA01C0282BFD7D0005B563 /* PhotoCollectionViewCell.xib */; };
+		A5FA01C4282C0FC90005B563 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FA01C3282C0FC90005B563 /* Photo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,12 @@
 		4DBBB270281C3F99006B8236 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DBBB273281C3F99006B8236 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4DBBB275281C3F99006B8236 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5FA01B9282BF4630005B563 /* CustomLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayout.swift; sourceTree = "<group>"; };
+		A5FA01BB282BF47E0005B563 /* CustomAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
+		A5FA01BD282BF4910005B563 /* CustomAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
+		A5FA01BF282BFD7D0005B563 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		A5FA01C0282BFD7D0005B563 /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
+		A5FA01C3282C0FC90005B563 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +68,61 @@
 		4DBBB266281C3F96006B8236 /* homework_camera_collection */ = {
 			isa = PBXGroup;
 			children = (
+				A5FA01B4282BF37A0005B563 /* MapModule */,
+				A5FA01B8282BF42D0005B563 /* Layouts */,
 				4DBBB267281C3F96006B8236 /* AppDelegate.swift */,
 				4DBBB269281C3F96006B8236 /* SceneDelegate.swift */,
-				4DBBB26B281C3F96006B8236 /* ViewController.swift */,
 				4DBBB26D281C3F96006B8236 /* Main.storyboard */,
 				4DBBB270281C3F99006B8236 /* Assets.xcassets */,
 				4DBBB272281C3F99006B8236 /* LaunchScreen.storyboard */,
 				4DBBB275281C3F99006B8236 /* Info.plist */,
 			);
 			path = homework_camera_collection;
+			sourceTree = "<group>";
+		};
+		A5FA01B4282BF37A0005B563 /* MapModule */ = {
+			isa = PBXGroup;
+			children = (
+				A5FA01B5282BF3840005B563 /* Model */,
+				A5FA01B6282BF38A0005B563 /* View */,
+				A5FA01B7282BF38F0005B563 /* Controller */,
+			);
+			path = MapModule;
+			sourceTree = "<group>";
+		};
+		A5FA01B5282BF3840005B563 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A5FA01BB282BF47E0005B563 /* CustomAnnotation.swift */,
+				A5FA01C3282C0FC90005B563 /* Photo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A5FA01B6282BF38A0005B563 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A5FA01BD282BF4910005B563 /* CustomAnnotationView.swift */,
+				A5FA01BF282BFD7D0005B563 /* PhotoCollectionViewCell.swift */,
+				A5FA01C0282BFD7D0005B563 /* PhotoCollectionViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A5FA01B7282BF38F0005B563 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4DBBB26B281C3F96006B8236 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A5FA01B8282BF42D0005B563 /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				A5FA01B9282BF4630005B563 /* CustomLayout.swift */,
+			);
+			path = Layouts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DBBB274281C3F99006B8236 /* LaunchScreen.storyboard in Resources */,
+				A5FA01C2282BFD7D0005B563 /* PhotoCollectionViewCell.xib in Resources */,
 				4DBBB271281C3F99006B8236 /* Assets.xcassets in Resources */,
 				4DBBB26F281C3F96006B8236 /* Main.storyboard in Resources */,
 			);
@@ -138,8 +197,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5FA01C4282C0FC90005B563 /* Photo.swift in Sources */,
 				4DBBB26C281C3F96006B8236 /* ViewController.swift in Sources */,
 				4DBBB268281C3F96006B8236 /* AppDelegate.swift in Sources */,
+				A5FA01BC282BF47E0005B563 /* CustomAnnotation.swift in Sources */,
+				A5FA01BA282BF4630005B563 /* CustomLayout.swift in Sources */,
+				A5FA01C1282BFD7D0005B563 /* PhotoCollectionViewCell.swift in Sources */,
+				A5FA01BE282BF4910005B563 /* CustomAnnotationView.swift in Sources */,
 				4DBBB26A281C3F96006B8236 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,7 +281,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -272,7 +336,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -289,7 +353,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 939KD425D9;
+				DEVELOPMENT_TEAM = NF5V6HM2Z5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = homework_camera_collection/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -302,7 +366,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.itis.ex.homework-camera-collection";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.itis.ex.homework-camera-collection1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -317,7 +381,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 939KD425D9;
+				DEVELOPMENT_TEAM = NF5V6HM2Z5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = homework_camera_collection/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -330,7 +394,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.itis.ex.homework-camera-collection";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.itis.ex.homework-camera-collection1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
