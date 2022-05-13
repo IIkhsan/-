@@ -16,6 +16,8 @@
 		4DBBB274281C3F99006B8236 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBB272281C3F99006B8236 /* LaunchScreen.storyboard */; };
 		A234FFE8281FFF2700B18502 /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A234FFE7281FFF2600B18502 /* CustomAnnotation.swift */; };
 		A234FFEA2820035300B18502 /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A234FFE92820035300B18502 /* CustomAnnotationView.swift */; };
+		A2DB8CC3282EDED300AE9CC0 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DB8CC2282EDED300AE9CC0 /* CustomCollectionViewCell.swift */; };
+		A2DB8CC5282EDF9800AE9CC0 /* PhotoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DB8CC4282EDF9800AE9CC0 /* PhotoCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		8C933E4A21F2D759E303ACF4 /* Pods_homework_camera_collection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_homework_camera_collection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A234FFE7281FFF2600B18502 /* CustomAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
 		A234FFE92820035300B18502 /* CustomAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
+		A2DB8CC2282EDED300AE9CC0 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		A2DB8CC4282EDF9800AE9CC0 /* PhotoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,10 +74,12 @@
 				4DBBB267281C3F96006B8236 /* AppDelegate.swift */,
 				4DBBB269281C3F96006B8236 /* SceneDelegate.swift */,
 				4DBBB26B281C3F96006B8236 /* MapViewController.swift */,
+				A2DB8CC2282EDED300AE9CC0 /* CustomCollectionViewCell.swift */,
 				4DBBB26D281C3F96006B8236 /* Main.storyboard */,
 				4DBBB270281C3F99006B8236 /* Assets.xcassets */,
 				4DBBB272281C3F99006B8236 /* LaunchScreen.storyboard */,
 				4DBBB275281C3F99006B8236 /* Info.plist */,
+				A2DB8CC4282EDF9800AE9CC0 /* PhotoCard.swift */,
 				A234FFE92820035300B18502 /* CustomAnnotationView.swift */,
 				A234FFE7281FFF2600B18502 /* CustomAnnotation.swift */,
 			);
@@ -213,6 +219,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DBBB26C281C3F96006B8236 /* MapViewController.swift in Sources */,
+				A2DB8CC5282EDF9800AE9CC0 /* PhotoCard.swift in Sources */,
+				A2DB8CC3282EDED300AE9CC0 /* CustomCollectionViewCell.swift in Sources */,
 				A234FFEA2820035300B18502 /* CustomAnnotationView.swift in Sources */,
 				4DBBB268281C3F96006B8236 /* AppDelegate.swift in Sources */,
 				4DBBB26A281C3F96006B8236 /* SceneDelegate.swift in Sources */,

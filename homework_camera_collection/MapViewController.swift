@@ -5,13 +5,25 @@ import PhotosUI
 import SnapKit
 
 class MapViewController: UIViewController {
-    // MARK: - Properties
+    // MARK: - Private properties
     
-    lazy var mapView: MKMapView = {
+    private var photoCards: [PhotoCard] = []
+    // MARK: - UI
+    
+    private lazy var mapView: MKMapView = {
         let view = MKMapView()
         return view
     }()
     
+    private lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
+//        view.backgroundColor = UIColor(white: 1, alpha: .zero)
+        view.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.customCollectionViewCellReuseId)
+        view.backgroundColor = .red
+        return view
+    }()
     // MARK: - View life cycle
 
     override func viewDidLoad() {
@@ -19,6 +31,8 @@ class MapViewController: UIViewController {
         setUpMapView()
         setUpView()
         setUpConstraints()
+        collectionView.delegate = self
+        collectionView.dataSource = self
     }
     // MARK: - Private functions
     
@@ -40,6 +54,7 @@ class MapViewController: UIViewController {
     
     private func setUpView() {
         self.view.backgroundColor = .systemBackground
+        self.mapView.addSubview(collectionView)
         self.view.addSubview(mapView)
         let selectImageImageBarButtonItem = UIBarButtonItem(title: "Select image", style: .plain, target: self, action: #selector(selectImageBarButtonItemDidPressed))
         selectImageImageBarButtonItem.tintColor = .systemBlue
@@ -51,15 +66,24 @@ class MapViewController: UIViewController {
             make.top.bottom.equalTo(self.view.safeAreaLayoutGuide)
             make.leading.trailing.equalToSuperview()
         }
+        collectionView.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview()
+            make.height.equalTo(200)
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide)
+        }
     }
     
     private func addAnnotationToMapView(image: UIImage) {
         let centerCoordinate = self.mapView.centerCoordinate
         let customAnnotation = CustomAnnotation(coordinate: centerCoordinate)
-        customAnnotation.title = Date().formatted() + "   "  + String(format: "%.3f", centerCoordinate.latitude) + ", " + String(format: "%.3f", centerCoordinate.longitude)
+        customAnnotation.title = Date().formatted()
+        customAnnotation.subtitle = String(format: "%.3f", centerCoordinate.latitude) + ", " + String(format: "%.3f", centerCoordinate.longitude)
         customAnnotation.image = image
+        let photoCard = PhotoCard(image: customAnnotation.image, date: customAnnotation.title, coordinate: customAnnotation.subtitle)
+        photoCards.append(photoCard)
         DispatchQueue.main.async {
             self.mapView.addAnnotation(customAnnotation)
+            self.collectionView.reloadData()
         }
     }
     
@@ -70,7 +94,7 @@ class MapViewController: UIViewController {
         let pointAnnotation = MKPointAnnotation()
         pointAnnotation.coordinate = currentLocationCoordinate
         mapView.addAnnotation(pointAnnotation)
-        let coordinateSpan = MKCoordinateSpan(latitudeDelta: 0.7, longitudeDelta: 0.7)
+        let coordinateSpan = MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
         mapView.setRegion(MKCoordinateRegion(center: currentLocationCoordinate, span: coordinateSpan), animated: true)
     }
     // MARK: - OBJC functions
@@ -149,6 +173,29 @@ extension MapViewController: MKMapViewDelegate {
                 obtainImageFromLibrary()
             }
         }
+    }
+}
+// MARK: - UICollectionViewDelegateFlowLayout
+
+extension MapViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 200, height: 300)
+    }
+}
+// MARK: - UICollectionViewDataSource
+
+extension MapViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return photoCards.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.customCollectionViewCellReuseId, for: indexPath) as? CustomCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        let photoCard = photoCards[indexPath.row]
+        cell.configureCell(photoCard)
+        return cell
     }
 }
 
