@@ -27,7 +27,6 @@ class MapViewController: UIViewController {
         view.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.customCollectionViewCellReuseId)
         view.decelerationRate = .fast
         view.contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 20.0)
-        view.isPagingEnabled = true
         return view
     }()
     // MARK: - View life cycle
@@ -37,8 +36,8 @@ class MapViewController: UIViewController {
         setUpMapView()
         setUpView()
         setUpConstraints()
-        collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.delegate = self
     }
     // MARK: - Private functions
     
@@ -103,6 +102,34 @@ class MapViewController: UIViewController {
         let coordinateSpan = MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
         mapView.setRegion(MKCoordinateRegion(center: currentLocationCoordinate, span: coordinateSpan), animated: true)
     }
+    
+    private func setupCell() {
+        guard let layout = collectionView.collectionViewLayout as? CustomCollectionViewFlowLayout else {
+            return
+        }
+        let indexPath = IndexPath(item: layout.currentPage, section: 0)
+        if let cell = collectionView.cellForItem(at: indexPath) {
+            transformCell(cell)
+        }
+    }
+    
+    private func transformCell(_ cell: UICollectionViewCell) {
+        UIView.animate(withDuration: 0.2) {
+            cell.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+        }
+        collectionView.visibleCells.forEach { visibleCell in
+            guard let layout = collectionView.collectionViewLayout as? CustomCollectionViewFlowLayout else {
+                return
+            }
+            if let indexPath = collectionView.indexPath(for: visibleCell) {
+                if indexPath.item != layout.currentPage {
+                    UIView.animate(withDuration: 0.3) {
+                        visibleCell.transform = .identity
+                    }
+                }
+            }
+        }
+    }
     // MARK: - OBJC functions
     
     @objc private func selectImageBarButtonItemDidPressed() {
@@ -159,34 +186,6 @@ extension MapViewController: MKMapViewDelegate {
             return nil
         }
     }
-    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        let selectedAnnotation = view.annotation
-        let pointAnnotation = MKPointAnnotation()
-        for mapAnnotation in mapView.annotations {
-            if let annotation = mapAnnotation as? CustomAnnotation, annotation.isEqual(selectedAnnotation) {
-                let currentLocationCoordinate = annotation.coordinate
-                mapView.removeAnnotation(annotation)
-                pointAnnotation.coordinate = currentLocationCoordinate
-                mapView.addAnnotation(pointAnnotation)
-            }
-        }
-    }
-    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
-        let selectedAnnotation = view.annotation
-        for mapAnnotation in mapView.annotations {
-            if mapAnnotation.isEqual(selectedAnnotation) {
-                mapView.removeAnnotation(mapAnnotation)
-                obtainImageFromLibrary()
-            }
-        }
-    }
-}
-// MARK: - UICollectionViewDelegateFlowLayout
-
-extension MapViewController: UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: 160, height: 250)
-//    }
 }
 // MARK: - UICollectionViewDataSource
 
@@ -201,7 +200,18 @@ extension MapViewController: UICollectionViewDataSource {
         }
         let photoCard = photoCards[indexPath.item]
         cell.configureCell(photoCard)
+        if indexPath.item == 0 {
+            transformCell(cell)
+        }
         return cell
     }
 }
+// MARK: - UIScrollViewDelegate
 
+extension MapViewController: UICollectionViewDelegate{
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if decelerate {
+            setupCell()
+        }
+    }
+}
