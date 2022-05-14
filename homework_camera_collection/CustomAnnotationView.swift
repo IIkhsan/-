@@ -76,7 +76,7 @@ class CustomAnnotationView: MKAnnotationView {
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
         
         backgroundColor = UIColor.clear
-        backgroundMaterial.backgroundColor = UIColor.clear
+        backgroundMaterial.backgroundColor = .systemBlue
         addSubview(backgroundMaterial)
         
         backgroundMaterial.contentView.addSubview(stackView)

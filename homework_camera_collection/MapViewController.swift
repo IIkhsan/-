@@ -16,12 +16,18 @@ class MapViewController: UIViewController {
     }()
     
     private lazy var collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
+        let layout = CustomCollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = 20.0
+        layout.itemSize.width = 160
+        layout.itemSize.height = 250
+        layout.sectionInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 20.0)
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
-//        view.backgroundColor = UIColor(white: 1, alpha: .zero)
+        view.backgroundColor = UIColor(white: 1, alpha: .zero)
         view.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.customCollectionViewCellReuseId)
-        view.backgroundColor = .red
+        view.decelerationRate = .fast
+        view.contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 20.0)
+        view.isPagingEnabled = true
         return view
     }()
     // MARK: - View life cycle
@@ -68,7 +74,7 @@ class MapViewController: UIViewController {
         }
         collectionView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
-            make.height.equalTo(200)
+            make.height.equalTo(250)
             make.bottom.equalTo(self.view.safeAreaLayoutGuide)
         }
     }
@@ -178,9 +184,9 @@ extension MapViewController: MKMapViewDelegate {
 // MARK: - UICollectionViewDelegateFlowLayout
 
 extension MapViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 200, height: 300)
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: 160, height: 250)
+//    }
 }
 // MARK: - UICollectionViewDataSource
 
@@ -193,7 +199,7 @@ extension MapViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.customCollectionViewCellReuseId, for: indexPath) as? CustomCollectionViewCell else {
             return UICollectionViewCell()
         }
-        let photoCard = photoCards[indexPath.row]
+        let photoCard = photoCards[indexPath.item]
         cell.configureCell(photoCard)
         return cell
     }

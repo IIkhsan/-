@@ -18,6 +18,7 @@
 		A234FFEA2820035300B18502 /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A234FFE92820035300B18502 /* CustomAnnotationView.swift */; };
 		A2DB8CC3282EDED300AE9CC0 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DB8CC2282EDED300AE9CC0 /* CustomCollectionViewCell.swift */; };
 		A2DB8CC5282EDF9800AE9CC0 /* PhotoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DB8CC4282EDF9800AE9CC0 /* PhotoCard.swift */; };
+		A2DB8CC7282FD2C800AE9CC0 /* CustomCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DB8CC6282FD2C800AE9CC0 /* CustomCollectionViewFlowLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		A234FFE92820035300B18502 /* CustomAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
 		A2DB8CC2282EDED300AE9CC0 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		A2DB8CC4282EDF9800AE9CC0 /* PhotoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCard.swift; sourceTree = "<group>"; };
+		A2DB8CC6282FD2C800AE9CC0 /* CustomCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				4DBBB269281C3F96006B8236 /* SceneDelegate.swift */,
 				4DBBB26B281C3F96006B8236 /* MapViewController.swift */,
 				A2DB8CC2282EDED300AE9CC0 /* CustomCollectionViewCell.swift */,
+				A2DB8CC6282FD2C800AE9CC0 /* CustomCollectionViewFlowLayout.swift */,
 				4DBBB26D281C3F96006B8236 /* Main.storyboard */,
 				4DBBB270281C3F99006B8236 /* Assets.xcassets */,
 				4DBBB272281C3F99006B8236 /* LaunchScreen.storyboard */,
@@ -225,6 +228,7 @@
 				4DBBB268281C3F96006B8236 /* AppDelegate.swift in Sources */,
 				4DBBB26A281C3F96006B8236 /* SceneDelegate.swift in Sources */,
 				A234FFE8281FFF2700B18502 /* CustomAnnotation.swift in Sources */,
+				A2DB8CC7282FD2C800AE9CC0 /* CustomCollectionViewFlowLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

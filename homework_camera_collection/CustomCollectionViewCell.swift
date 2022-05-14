@@ -6,6 +6,13 @@ class CustomCollectionViewCell: UICollectionViewCell {
     static let customCollectionViewCellReuseId = "customCollectionViewCellReuseId"
     // MARK: - UI
     
+    private lazy var containerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .systemBlue
+        view.layer.cornerRadius = 25
+        return view
+    }()
+    
     private lazy var imageView: UIImageView = {
         let view = UIImageView()
         return view
@@ -25,6 +32,7 @@ class CustomCollectionViewCell: UICollectionViewCell {
     // MARK: - Overrided functions
     
     // Initializers
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUpCollectionView()
@@ -42,26 +50,29 @@ class CustomCollectionViewCell: UICollectionViewCell {
     // MARK: - Private functions
     
     private func setUpCollectionView() {
+        contentView.addSubview(containerView)
         contentView.addSubview(imageView)
-        contentView.addSubview(coordinateLabel)
         contentView.addSubview(dateLabel)
+        contentView.addSubview(coordinateLabel)
     }
     
     private func setUpConstraints() {
+        containerView.snp.makeConstraints { make in
+            make.top.bottom.leading.equalToSuperview().inset(16)
+            make.width.equalTo(160)
+        }
         imageView.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(20)
-            make.leading.equalToSuperview().inset(16)
-            make.height.equalTo(100)
-            make.width.equalTo(100)
+            make.leading.trailing.equalTo(containerView).inset(8)
+            make.top.equalTo(containerView).inset(16)
+            make.height.equalTo(140)
         }
         dateLabel.snp.makeConstraints { make in
-            make.leading.equalToSuperview().inset(16)
-            make.top.equalTo(imageView).inset(10)
+            make.leading.equalTo(containerView).inset(8)
+            make.top.equalTo(imageView.snp.bottom).offset(10)
         }
         coordinateLabel.snp.makeConstraints { make in
-            make.leading.equalToSuperview().inset(16)
-            make.top.equalTo(dateLabel).inset(10)
-            make.bottom.equalToSuperview().inset(20)
+            make.top.equalTo(dateLabel.snp.bottom).offset(5)
+            make.leading.equalTo(containerView).inset(8)
         }
     }
     // MARK: - Public functions
