@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="D8m-6e-GlI">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="h8V-RS-hMK">
+            <objects>
+                <navigationController id="D8m-6e-GlI" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wwi-dB-3ef">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="6jQ-2i-pkG" kind="relationship" relationship="rootViewController" id="udx-Wy-A9D"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sf7-kS-0fQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1606" y="-16"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="yCH-Q6-PUc">
+            <objects>
+                <viewController id="6jQ-2i-pkG" customClass="ViewController" customModule="homework_camera_collection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xvv-Lu-Zo0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="GBb-JD-9aw">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mnd-zC-R30"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GBb-JD-9aw" firstAttribute="top" secondItem="mnd-zC-R30" secondAttribute="top" id="66x-Gj-AoN"/>
+                            <constraint firstItem="GBb-JD-9aw" firstAttribute="trailing" secondItem="mnd-zC-R30" secondAttribute="trailing" id="NYa-GM-9uG"/>
+                            <constraint firstItem="GBb-JD-9aw" firstAttribute="leading" secondItem="mnd-zC-R30" secondAttribute="leading" id="dmn-Oa-bwS"/>
+                            <constraint firstAttribute="bottom" secondItem="GBb-JD-9aw" secondAttribute="bottom" id="ps9-sN-yLH"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="vyI-4m-aI5">
+                        <barButtonItem key="leftBarButtonItem" title="Set photo from cam" id="ScG-Vf-9Fk">
+                            <connections>
+                                <action selector="didTapSetPhotoFromCam:" destination="6jQ-2i-pkG" id="rkN-zk-MTt"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Set photo from lib" id="eky-BZ-xrd">
+                            <connections>
+                                <action selector="didTapSetPhotoFromLib:" destination="6jQ-2i-pkG" id="wIf-O7-OHz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="GBb-JD-9aw" id="UWD-sF-Ckr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zgl-nj-0Dh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-759.4202898550725" y="-16.071428571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

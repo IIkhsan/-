@@ -10,9 +10,13 @@
 		4DBBB268281C3F96006B8236 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBBB267281C3F96006B8236 /* AppDelegate.swift */; };
 		4DBBB26A281C3F96006B8236 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBBB269281C3F96006B8236 /* SceneDelegate.swift */; };
 		4DBBB26C281C3F96006B8236 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBBB26B281C3F96006B8236 /* ViewController.swift */; };
-		4DBBB26F281C3F96006B8236 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBB26D281C3F96006B8236 /* Main.storyboard */; };
 		4DBBB271281C3F99006B8236 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBB270281C3F99006B8236 /* Assets.xcassets */; };
 		4DBBB274281C3F99006B8236 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBB272281C3F99006B8236 /* LaunchScreen.storyboard */; };
+		A22CF90B28242E8000CAEDB7 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22CF90928242E8000CAEDB7 /* CustomCollectionViewCell.swift */; };
+		A22CF90C28242E8000CAEDB7 /* CustomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A22CF90A28242E8000CAEDB7 /* CustomCollectionViewCell.xib */; };
+		A2B526A9281EC36300D693BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2B526A8281EC36300D693BA /* Main.storyboard */; };
+		A2B526B1281EC4BF00D693BA /* CustomAnnotaionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B526AD281EC4BF00D693BA /* CustomAnnotaionView.swift */; };
+		A2B526B2281EC4BF00D693BA /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B526AE281EC4BF00D693BA /* CustomAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +24,14 @@
 		4DBBB267281C3F96006B8236 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DBBB269281C3F96006B8236 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		4DBBB26B281C3F96006B8236 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4DBBB26E281C3F96006B8236 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4DBBB270281C3F99006B8236 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DBBB273281C3F99006B8236 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4DBBB275281C3F99006B8236 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A22CF90928242E8000CAEDB7 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		A22CF90A28242E8000CAEDB7 /* CustomCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCollectionViewCell.xib; sourceTree = "<group>"; };
+		A2B526A8281EC36300D693BA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		A2B526AD281EC4BF00D693BA /* CustomAnnotaionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnnotaionView.swift; sourceTree = "<group>"; };
+		A2B526AE281EC4BF00D693BA /* CustomAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,35 @@
 		4DBBB266281C3F96006B8236 /* homework_camera_collection */ = {
 			isa = PBXGroup;
 			children = (
+				A2B526AA281EC4BF00D693BA /* MapPin */,
 				4DBBB267281C3F96006B8236 /* AppDelegate.swift */,
 				4DBBB269281C3F96006B8236 /* SceneDelegate.swift */,
 				4DBBB26B281C3F96006B8236 /* ViewController.swift */,
-				4DBBB26D281C3F96006B8236 /* Main.storyboard */,
 				4DBBB270281C3F99006B8236 /* Assets.xcassets */,
+				A2B526A8281EC36300D693BA /* Main.storyboard */,
 				4DBBB272281C3F99006B8236 /* LaunchScreen.storyboard */,
 				4DBBB275281C3F99006B8236 /* Info.plist */,
 			);
 			path = homework_camera_collection;
+			sourceTree = "<group>";
+		};
+		A2B526AA281EC4BF00D693BA /* MapPin */ = {
+			isa = PBXGroup;
+			children = (
+				A2C7A3C7281ED121004D40B3 /* Сustom */,
+				A2B526AD281EC4BF00D693BA /* CustomAnnotaionView.swift */,
+				A2B526AE281EC4BF00D693BA /* CustomAnnotation.swift */,
+			);
+			path = MapPin;
+			sourceTree = "<group>";
+		};
+		A2C7A3C7281ED121004D40B3 /* Сustom */ = {
+			isa = PBXGroup;
+			children = (
+				A22CF90928242E8000CAEDB7 /* CustomCollectionViewCell.swift */,
+				A22CF90A28242E8000CAEDB7 /* CustomCollectionViewCell.xib */,
+			);
+			path = "Сustom";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +155,8 @@
 			files = (
 				4DBBB274281C3F99006B8236 /* LaunchScreen.storyboard in Resources */,
 				4DBBB271281C3F99006B8236 /* Assets.xcassets in Resources */,
-				4DBBB26F281C3F96006B8236 /* Main.storyboard in Resources */,
+				A2B526A9281EC36300D693BA /* Main.storyboard in Resources */,
+				A22CF90C28242E8000CAEDB7 /* CustomCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,7 +168,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DBBB26C281C3F96006B8236 /* ViewController.swift in Sources */,
+				A22CF90B28242E8000CAEDB7 /* CustomCollectionViewCell.swift in Sources */,
+				A2B526B1281EC4BF00D693BA /* CustomAnnotaionView.swift in Sources */,
 				4DBBB268281C3F96006B8236 /* AppDelegate.swift in Sources */,
+				A2B526B2281EC4BF00D693BA /* CustomAnnotation.swift in Sources */,
 				4DBBB26A281C3F96006B8236 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,14 +179,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		4DBBB26D281C3F96006B8236 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4DBBB26E281C3F96006B8236 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4DBBB272281C3F99006B8236 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -297,6 +321,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -325,6 +350,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
