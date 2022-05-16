@@ -12,12 +12,19 @@ import PhotosUI
 
 class ViewController: UIViewController {
     
+    //MARK: - IBOutlets
+    
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    //MARK: - private vars
     
     private let layout = CustomFlowLayout()
     private var photoCell: [PhotoCell] = []
     private let screenWidth = UIScreen.main.bounds.size.width
+    
+    
+    //MARK: - vars
     
     var itemWidth: CGFloat {
         return screenWidth * 0.4
@@ -30,6 +37,8 @@ class ViewController: UIViewController {
         configureMapView()
         configureCollectionView()
     }
+    
+    //MARK: - private config func
     
     private func configureMapView() {
         
@@ -95,6 +104,7 @@ class ViewController: UIViewController {
         
     }
     
+    //MARK: - IBActions
     
     @IBAction func setPhotoToPlace(_ sender: Any) {
         let alert = UIAlertController()
@@ -109,21 +119,6 @@ class ViewController: UIViewController {
         }))
         
         present(alert, animated: true, completion: nil)
-    }
-}
-
-// MARK: - UIImagePickerControllerDelegate, UINavigationControllerDelegate
-
-extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
-        picker.dismiss(animated: true, completion: nil)
-        guard let image = info[.editedImage] as? UIImage else {
-            return
-        }
-        
-        addAnnotation(image: image)
     }
 }
 
@@ -145,6 +140,21 @@ extension ViewController: MKMapViewDelegate {
         } else {
             return nil
         }
+    }
+}
+
+// MARK: - UIImagePickerControllerDelegate, UINavigationControllerDelegate
+
+extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        picker.dismiss(animated: true, completion: nil)
+        guard let image = info[.editedImage] as? UIImage else {
+            return
+        }
+        
+        addAnnotation(image: image)
     }
 }
 
