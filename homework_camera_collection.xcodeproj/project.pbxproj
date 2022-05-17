@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		049135FA28338C6400D5C387 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049135F928338C6400D5C387 /* PhotosCollectionViewCell.swift */; };
+		049135FC28338C7F00D5C387 /* MapAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049135FB28338C7F00D5C387 /* MapAnnotationView.swift */; };
+		049135FE28338CA300D5C387 /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049135FD28338CA300D5C387 /* MapAnnotation.swift */; };
 		4DBBB268281C3F96006B8236 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBBB267281C3F96006B8236 /* AppDelegate.swift */; };
 		4DBBB26A281C3F96006B8236 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBBB269281C3F96006B8236 /* SceneDelegate.swift */; };
 		4DBBB26C281C3F96006B8236 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBBB26B281C3F96006B8236 /* ViewController.swift */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		049135F928338C6400D5C387 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
+		049135FB28338C7F00D5C387 /* MapAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotationView.swift; sourceTree = "<group>"; };
+		049135FD28338CA300D5C387 /* MapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
 		4DBBB264281C3F96006B8236 /* homework_camera_collection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = homework_camera_collection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DBBB267281C3F96006B8236 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DBBB269281C3F96006B8236 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +65,9 @@
 				4DBBB267281C3F96006B8236 /* AppDelegate.swift */,
 				4DBBB269281C3F96006B8236 /* SceneDelegate.swift */,
 				4DBBB26B281C3F96006B8236 /* ViewController.swift */,
+				049135F928338C6400D5C387 /* PhotosCollectionViewCell.swift */,
+				049135FB28338C7F00D5C387 /* MapAnnotationView.swift */,
+				049135FD28338CA300D5C387 /* MapAnnotation.swift */,
 				4DBBB26D281C3F96006B8236 /* Main.storyboard */,
 				4DBBB270281C3F99006B8236 /* Assets.xcassets */,
 				4DBBB272281C3F99006B8236 /* LaunchScreen.storyboard */,
@@ -139,8 +148,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DBBB26C281C3F96006B8236 /* ViewController.swift in Sources */,
+				049135FC28338C7F00D5C387 /* MapAnnotationView.swift in Sources */,
+				049135FA28338C6400D5C387 /* PhotosCollectionViewCell.swift in Sources */,
 				4DBBB268281C3F96006B8236 /* AppDelegate.swift in Sources */,
 				4DBBB26A281C3F96006B8236 /* SceneDelegate.swift in Sources */,
+				049135FE28338CA300D5C387 /* MapAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,7 +301,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 939KD425D9;
+				DEVELOPMENT_TEAM = 7944299YL2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = homework_camera_collection/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -297,6 +309,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -317,7 +330,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 939KD425D9;
+				DEVELOPMENT_TEAM = 7944299YL2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = homework_camera_collection/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -325,6 +338,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
