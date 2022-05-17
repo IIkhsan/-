@@ -13,6 +13,10 @@
 		4DBBB26F281C3F96006B8236 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBB26D281C3F96006B8236 /* Main.storyboard */; };
 		4DBBB271281C3F99006B8236 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBB270281C3F99006B8236 /* Assets.xcassets */; };
 		4DBBB274281C3F99006B8236 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBB272281C3F99006B8236 /* LaunchScreen.storyboard */; };
+		7C7AA1332834180000E87DE9 /* SubviewAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7AA1322834180000E87DE9 /* SubviewAnnotation.swift */; };
+		7C7AA1352834185B00E87DE9 /* SubviewImplView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7AA1342834185B00E87DE9 /* SubviewImplView.swift */; };
+		7C7AA137283418B000E87DE9 /* SubviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7AA136283418B000E87DE9 /* SubviewCell.swift */; };
+		7C7AA139283419F000E87DE9 /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7AA138283419F000E87DE9 /* PhotoService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		4DBBB270281C3F99006B8236 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DBBB273281C3F99006B8236 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4DBBB275281C3F99006B8236 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7C7AA1322834180000E87DE9 /* SubviewAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubviewAnnotation.swift; sourceTree = "<group>"; };
+		7C7AA1342834185B00E87DE9 /* SubviewImplView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubviewImplView.swift; sourceTree = "<group>"; };
+		7C7AA136283418B000E87DE9 /* SubviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubviewCell.swift; sourceTree = "<group>"; };
+		7C7AA138283419F000E87DE9 /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,27 @@
 		4DBBB266281C3F96006B8236 /* homework_camera_collection */ = {
 			isa = PBXGroup;
 			children = (
+				7C7AA131283417E100E87DE9 /* SubView */,
+				7C7AA138283419F000E87DE9 /* PhotoService.swift */,
+				4DBBB26B281C3F96006B8236 /* ViewController.swift */,
 				4DBBB267281C3F96006B8236 /* AppDelegate.swift */,
 				4DBBB269281C3F96006B8236 /* SceneDelegate.swift */,
-				4DBBB26B281C3F96006B8236 /* ViewController.swift */,
 				4DBBB26D281C3F96006B8236 /* Main.storyboard */,
-				4DBBB270281C3F99006B8236 /* Assets.xcassets */,
 				4DBBB272281C3F99006B8236 /* LaunchScreen.storyboard */,
+				4DBBB270281C3F99006B8236 /* Assets.xcassets */,
 				4DBBB275281C3F99006B8236 /* Info.plist */,
 			);
 			path = homework_camera_collection;
+			sourceTree = "<group>";
+		};
+		7C7AA131283417E100E87DE9 /* SubView */ = {
+			isa = PBXGroup;
+			children = (
+				7C7AA136283418B000E87DE9 /* SubviewCell.swift */,
+				7C7AA1322834180000E87DE9 /* SubviewAnnotation.swift */,
+				7C7AA1342834185B00E87DE9 /* SubviewImplView.swift */,
+			);
+			path = SubView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +159,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DBBB26C281C3F96006B8236 /* ViewController.swift in Sources */,
+				7C7AA1352834185B00E87DE9 /* SubviewImplView.swift in Sources */,
 				4DBBB268281C3F96006B8236 /* AppDelegate.swift in Sources */,
+				7C7AA137283418B000E87DE9 /* SubviewCell.swift in Sources */,
+				7C7AA1332834180000E87DE9 /* SubviewAnnotation.swift in Sources */,
 				4DBBB26A281C3F96006B8236 /* SceneDelegate.swift in Sources */,
+				7C7AA139283419F000E87DE9 /* PhotoService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
