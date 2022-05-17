@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39E187592833C26D008BA9E8 /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E187582833C26D008BA9E8 /* CustomAnnotation.swift */; };
+		39E1875B2833C292008BA9E8 /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E1875A2833C292008BA9E8 /* CustomAnnotationView.swift */; };
+		39E1875D2833C887008BA9E8 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E1875C2833C887008BA9E8 /* CollectionViewCell.swift */; };
+		39E1875F2833C89A008BA9E8 /* ModelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E1875E2833C89A008BA9E8 /* ModelCell.swift */; };
+		39E187612833C9CB008BA9E8 /* CollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E187602833C9CB008BA9E8 /* CollectionViewFlowLayout.swift */; };
 		4DBBB268281C3F96006B8236 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBBB267281C3F96006B8236 /* AppDelegate.swift */; };
 		4DBBB26A281C3F96006B8236 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBBB269281C3F96006B8236 /* SceneDelegate.swift */; };
 		4DBBB26C281C3F96006B8236 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBBB26B281C3F96006B8236 /* ViewController.swift */; };
@@ -16,6 +21,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		39E187582833C26D008BA9E8 /* CustomAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
+		39E1875A2833C292008BA9E8 /* CustomAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
+		39E1875C2833C887008BA9E8 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		39E1875E2833C89A008BA9E8 /* ModelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCell.swift; sourceTree = "<group>"; };
+		39E187602833C9CB008BA9E8 /* CollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		4DBBB264281C3F96006B8236 /* homework_camera_collection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = homework_camera_collection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DBBB267281C3F96006B8236 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DBBB269281C3F96006B8236 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +47,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		39E187532833C21F008BA9E8 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				39E1875C2833C887008BA9E8 /* CollectionViewCell.swift */,
+				39E1875E2833C89A008BA9E8 /* ModelCell.swift */,
+				39E187602833C9CB008BA9E8 /* CollectionViewFlowLayout.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		39E187542833C227008BA9E8 /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				39E187532833C21F008BA9E8 /* CollectionView */,
+				39E187572833C24C008BA9E8 /* Model */,
+				39E187562833C247008BA9E8 /* View */,
+				39E187552833C241008BA9E8 /* Controller */,
+			);
+			path = MapView;
+			sourceTree = "<group>";
+		};
+		39E187552833C241008BA9E8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4DBBB26B281C3F96006B8236 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		39E187562833C247008BA9E8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				39E1875A2833C292008BA9E8 /* CustomAnnotationView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		39E187572833C24C008BA9E8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				39E187582833C26D008BA9E8 /* CustomAnnotation.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		4DBBB25B281C3F96006B8236 = {
 			isa = PBXGroup;
 			children = (
@@ -56,9 +111,9 @@
 		4DBBB266281C3F96006B8236 /* homework_camera_collection */ = {
 			isa = PBXGroup;
 			children = (
+				39E187542833C227008BA9E8 /* MapView */,
 				4DBBB267281C3F96006B8236 /* AppDelegate.swift */,
 				4DBBB269281C3F96006B8236 /* SceneDelegate.swift */,
-				4DBBB26B281C3F96006B8236 /* ViewController.swift */,
 				4DBBB26D281C3F96006B8236 /* Main.storyboard */,
 				4DBBB270281C3F99006B8236 /* Assets.xcassets */,
 				4DBBB272281C3F99006B8236 /* LaunchScreen.storyboard */,
@@ -139,8 +194,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DBBB26C281C3F96006B8236 /* ViewController.swift in Sources */,
+				39E1875B2833C292008BA9E8 /* CustomAnnotationView.swift in Sources */,
+				39E1875D2833C887008BA9E8 /* CollectionViewCell.swift in Sources */,
 				4DBBB268281C3F96006B8236 /* AppDelegate.swift in Sources */,
 				4DBBB26A281C3F96006B8236 /* SceneDelegate.swift in Sources */,
+				39E1875F2833C89A008BA9E8 /* ModelCell.swift in Sources */,
+				39E187612833C9CB008BA9E8 /* CollectionViewFlowLayout.swift in Sources */,
+				39E187592833C26D008BA9E8 /* CustomAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
