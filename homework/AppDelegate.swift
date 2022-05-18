@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  homework_camera_collection
+//  homework
 //
-//  Created by ilyas.ikhsanov on 29.04.2022.
+//  Created by Evelina on 27.04.2022.
 //
 
 import UIKit

@@ -7,27 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4DBBB268281C3F96006B8236 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBBB267281C3F96006B8236 /* AppDelegate.swift */; };
-		4DBBB26A281C3F96006B8236 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBBB269281C3F96006B8236 /* SceneDelegate.swift */; };
-		4DBBB26C281C3F96006B8236 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBBB26B281C3F96006B8236 /* ViewController.swift */; };
-		4DBBB26F281C3F96006B8236 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBB26D281C3F96006B8236 /* Main.storyboard */; };
-		4DBBB271281C3F99006B8236 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBB270281C3F99006B8236 /* Assets.xcassets */; };
-		4DBBB274281C3F99006B8236 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBB272281C3F99006B8236 /* LaunchScreen.storyboard */; };
+		E538A3BB281999F6008907DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E538A3BA281999F6008907DA /* AppDelegate.swift */; };
+		E538A3BD281999F6008907DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E538A3BC281999F6008907DA /* SceneDelegate.swift */; };
+		E538A3BF281999F6008907DA /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E538A3BE281999F6008907DA /* MapViewController.swift */; };
+		E538A3C2281999F6008907DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E538A3C0281999F6008907DA /* Main.storyboard */; };
+		E538A3C4281999F8008907DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E538A3C3281999F8008907DA /* Assets.xcassets */; };
+		E538A3C7281999F8008907DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E538A3C5281999F8008907DA /* LaunchScreen.storyboard */; };
+		E58659B32821881E00C43EF7 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58659B22821881E00C43EF7 /* CardCollectionViewCell.swift */; };
+		E58659B52821921900C43EF7 /* CustomCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58659B42821921900C43EF7 /* CustomCollectionViewLayout.swift */; };
+		E5EA61A9281D97070064F475 /* PhotoAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EA61A8281D97070064F475 /* PhotoAnnotationView.swift */; };
+		E5EA61AB281DA5110064F475 /* PhotoAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EA61AA281DA5110064F475 /* PhotoAnnotation.swift */; };
+		E5EA61AD281EBDD10064F475 /* PhotoNumberAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EA61AC281EBDD00064F475 /* PhotoNumberAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4DBBB264281C3F96006B8236 /* homework_camera_collection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = homework_camera_collection.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4DBBB267281C3F96006B8236 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4DBBB269281C3F96006B8236 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4DBBB26B281C3F96006B8236 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4DBBB26E281C3F96006B8236 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4DBBB270281C3F99006B8236 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4DBBB273281C3F99006B8236 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		4DBBB275281C3F99006B8236 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E538A3B7281999F6008907DA /* homework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = homework.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E538A3BA281999F6008907DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E538A3BC281999F6008907DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E538A3BE281999F6008907DA /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		E538A3C1281999F6008907DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E538A3C3281999F8008907DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E538A3C6281999F8008907DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E538A3C8281999F8008907DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E58659B22821881E00C43EF7 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
+		E58659B42821921900C43EF7 /* CustomCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewLayout.swift; sourceTree = "<group>"; };
+		E5EA61A8281D97070064F475 /* PhotoAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAnnotationView.swift; sourceTree = "<group>"; };
+		E5EA61AA281DA5110064F475 /* PhotoAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAnnotation.swift; sourceTree = "<group>"; };
+		E5EA61AC281EBDD00064F475 /* PhotoNumberAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoNumberAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4DBBB261281C3F96006B8236 /* Frameworks */ = {
+		E538A3B4281999F6008907DA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -37,72 +47,77 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4DBBB25B281C3F96006B8236 = {
+		E538A3AE281999F6008907DA = {
 			isa = PBXGroup;
 			children = (
-				4DBBB266281C3F96006B8236 /* homework_camera_collection */,
-				4DBBB265281C3F96006B8236 /* Products */,
+				E538A3B9281999F6008907DA /* homework */,
+				E538A3B8281999F6008907DA /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		4DBBB265281C3F96006B8236 /* Products */ = {
+		E538A3B8281999F6008907DA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4DBBB264281C3F96006B8236 /* homework_camera_collection.app */,
+				E538A3B7281999F6008907DA /* homework.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4DBBB266281C3F96006B8236 /* homework_camera_collection */ = {
+		E538A3B9281999F6008907DA /* homework */ = {
 			isa = PBXGroup;
 			children = (
-				4DBBB267281C3F96006B8236 /* AppDelegate.swift */,
-				4DBBB269281C3F96006B8236 /* SceneDelegate.swift */,
-				4DBBB26B281C3F96006B8236 /* ViewController.swift */,
-				4DBBB26D281C3F96006B8236 /* Main.storyboard */,
-				4DBBB270281C3F99006B8236 /* Assets.xcassets */,
-				4DBBB272281C3F99006B8236 /* LaunchScreen.storyboard */,
-				4DBBB275281C3F99006B8236 /* Info.plist */,
+				E538A3BA281999F6008907DA /* AppDelegate.swift */,
+				E538A3BC281999F6008907DA /* SceneDelegate.swift */,
+				E538A3BE281999F6008907DA /* MapViewController.swift */,
+				E538A3C0281999F6008907DA /* Main.storyboard */,
+				E538A3C3281999F8008907DA /* Assets.xcassets */,
+				E538A3C5281999F8008907DA /* LaunchScreen.storyboard */,
+				E538A3C8281999F8008907DA /* Info.plist */,
+				E5EA61A8281D97070064F475 /* PhotoAnnotationView.swift */,
+				E5EA61AA281DA5110064F475 /* PhotoAnnotation.swift */,
+				E5EA61AC281EBDD00064F475 /* PhotoNumberAnnotation.swift */,
+				E58659B22821881E00C43EF7 /* CardCollectionViewCell.swift */,
+				E58659B42821921900C43EF7 /* CustomCollectionViewLayout.swift */,
 			);
-			path = homework_camera_collection;
+			path = homework;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4DBBB263281C3F96006B8236 /* homework_camera_collection */ = {
+		E538A3B6281999F6008907DA /* homework */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4DBBB278281C3F99006B8236 /* Build configuration list for PBXNativeTarget "homework_camera_collection" */;
+			buildConfigurationList = E538A3CB281999F8008907DA /* Build configuration list for PBXNativeTarget "homework" */;
 			buildPhases = (
-				4DBBB260281C3F96006B8236 /* Sources */,
-				4DBBB261281C3F96006B8236 /* Frameworks */,
-				4DBBB262281C3F96006B8236 /* Resources */,
+				E538A3B3281999F6008907DA /* Sources */,
+				E538A3B4281999F6008907DA /* Frameworks */,
+				E538A3B5281999F6008907DA /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = homework_camera_collection;
-			productName = homework_camera_collection;
-			productReference = 4DBBB264281C3F96006B8236 /* homework_camera_collection.app */;
+			name = homework;
+			productName = homework;
+			productReference = E538A3B7281999F6008907DA /* homework.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		4DBBB25C281C3F96006B8236 /* Project object */ = {
+		E538A3AF281999F6008907DA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1320;
-				LastUpgradeCheck = 1320;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
 				TargetAttributes = {
-					4DBBB263281C3F96006B8236 = {
-						CreatedOnToolsVersion = 13.2.1;
+					E538A3B6281999F6008907DA = {
+						CreatedOnToolsVersion = 13.1;
 					};
 				};
 			};
-			buildConfigurationList = 4DBBB25F281C3F96006B8236 /* Build configuration list for PBXProject "homework_camera_collection" */;
+			buildConfigurationList = E538A3B2281999F6008907DA /* Build configuration list for PBXProject "homework" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -110,55 +125,60 @@
 				en,
 				Base,
 			);
-			mainGroup = 4DBBB25B281C3F96006B8236;
-			productRefGroup = 4DBBB265281C3F96006B8236 /* Products */;
+			mainGroup = E538A3AE281999F6008907DA;
+			productRefGroup = E538A3B8281999F6008907DA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4DBBB263281C3F96006B8236 /* homework_camera_collection */,
+				E538A3B6281999F6008907DA /* homework */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4DBBB262281C3F96006B8236 /* Resources */ = {
+		E538A3B5281999F6008907DA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DBBB274281C3F99006B8236 /* LaunchScreen.storyboard in Resources */,
-				4DBBB271281C3F99006B8236 /* Assets.xcassets in Resources */,
-				4DBBB26F281C3F96006B8236 /* Main.storyboard in Resources */,
+				E538A3C7281999F8008907DA /* LaunchScreen.storyboard in Resources */,
+				E538A3C4281999F8008907DA /* Assets.xcassets in Resources */,
+				E538A3C2281999F6008907DA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4DBBB260281C3F96006B8236 /* Sources */ = {
+		E538A3B3281999F6008907DA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DBBB26C281C3F96006B8236 /* ViewController.swift in Sources */,
-				4DBBB268281C3F96006B8236 /* AppDelegate.swift in Sources */,
-				4DBBB26A281C3F96006B8236 /* SceneDelegate.swift in Sources */,
+				E58659B32821881E00C43EF7 /* CardCollectionViewCell.swift in Sources */,
+				E538A3BF281999F6008907DA /* MapViewController.swift in Sources */,
+				E538A3BB281999F6008907DA /* AppDelegate.swift in Sources */,
+				E5EA61AD281EBDD10064F475 /* PhotoNumberAnnotation.swift in Sources */,
+				E58659B52821921900C43EF7 /* CustomCollectionViewLayout.swift in Sources */,
+				E5EA61AB281DA5110064F475 /* PhotoAnnotation.swift in Sources */,
+				E5EA61A9281D97070064F475 /* PhotoAnnotationView.swift in Sources */,
+				E538A3BD281999F6008907DA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		4DBBB26D281C3F96006B8236 /* Main.storyboard */ = {
+		E538A3C0281999F6008907DA /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4DBBB26E281C3F96006B8236 /* Base */,
+				E538A3C1281999F6008907DA /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		4DBBB272281C3F99006B8236 /* LaunchScreen.storyboard */ = {
+		E538A3C5281999F8008907DA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4DBBB273281C3F99006B8236 /* Base */,
+				E538A3C6281999F8008907DA /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -166,7 +186,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		4DBBB276281C3F99006B8236 /* Debug */ = {
+		E538A3C9281999F8008907DA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -217,7 +237,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -227,7 +247,7 @@
 			};
 			name = Debug;
 		};
-		4DBBB277281C3F99006B8236 /* Release */ = {
+		E538A3CA281999F8008907DA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -272,7 +292,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -282,16 +302,15 @@
 			};
 			name = Release;
 		};
-		4DBBB279281C3F99006B8236 /* Debug */ = {
+		E538A3CC281999F8008907DA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 939KD425D9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = homework_camera_collection/Info.plist;
+				INFOPLIST_FILE = homework/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -302,7 +321,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.itis.ex.homework-camera-collection";
+				PRODUCT_BUNDLE_IDENTIFIER = itis.homework;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -310,16 +329,15 @@
 			};
 			name = Debug;
 		};
-		4DBBB27A281C3F99006B8236 /* Release */ = {
+		E538A3CD281999F8008907DA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 939KD425D9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = homework_camera_collection/Info.plist;
+				INFOPLIST_FILE = homework/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -330,7 +348,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.itis.ex.homework-camera-collection";
+				PRODUCT_BUNDLE_IDENTIFIER = itis.homework;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -341,25 +359,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4DBBB25F281C3F96006B8236 /* Build configuration list for PBXProject "homework_camera_collection" */ = {
+		E538A3B2281999F6008907DA /* Build configuration list for PBXProject "homework" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4DBBB276281C3F99006B8236 /* Debug */,
-				4DBBB277281C3F99006B8236 /* Release */,
+				E538A3C9281999F8008907DA /* Debug */,
+				E538A3CA281999F8008907DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4DBBB278281C3F99006B8236 /* Build configuration list for PBXNativeTarget "homework_camera_collection" */ = {
+		E538A3CB281999F8008907DA /* Build configuration list for PBXNativeTarget "homework" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4DBBB279281C3F99006B8236 /* Debug */,
-				4DBBB27A281C3F99006B8236 /* Release */,
+				E538A3CC281999F8008907DA /* Debug */,
+				E538A3CD281999F8008907DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 4DBBB25C281C3F96006B8236 /* Project object */;
+	rootObject = E538A3AF281999F6008907DA /* Project object */;
 }
