@@ -13,16 +13,22 @@ import PhotosUI
 
 class ViewController: UIViewController {
     
+    //MARK: Properties
+    
     lazy var addButton = UIButton()
     lazy var mapView = MKMapView()
-    lazy var contentView = UIView()
-    lazy var collectionView = UICollectionView()
+    lazy var collectionView = CustomCollectionView()
+    
+    private var pinCells: [PinCell] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
         configureMapView()
+        configureCollectionView()
     }
+    
+    // MARK: Selectors
     
     @objc func addButtonTapped() {
         let alert = UIAlertController()
@@ -39,13 +45,18 @@ class ViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    // MARK: Private Functions
+    
     private func addAnnotation(image: UIImage) {
         let center = self.mapView.centerCoordinate
         let imageAnnotation = CustomAnnotation(coordinate: center)
         imageAnnotation.title = Date().formatted()
         imageAnnotation.image = image
         
+        pinCells.append(PinCell(image: image, date: Date().formatted(), coordinate: "\(mapView.centerCoordinate.latitude), \(mapView.centerCoordinate.longitude)"))
+        
         DispatchQueue.main.async {
+            self.collectionView.reloadData()
             self.mapView.addAnnotation(imageAnnotation)
         }
     }
@@ -65,6 +76,11 @@ class ViewController: UIViewController {
         let vc = PHPickerViewController(configuration: config)
         vc.delegate = self
         present(vc, animated: true)
+    }
+    
+    private func configureCollectionView() {
+        collectionView.delegate = self
+        collectionView.dataSource = self
     }
     
     private func configureMapView() {
@@ -99,17 +115,17 @@ class ViewController: UIViewController {
             make.height.equalToSuperview().multipliedBy(0.7)
         }
         
-        let contentView = contentView
-        contentView.backgroundColor = .yellow
-        view.addSubview(contentView)
-        contentView.snp.makeConstraints { make in
-            make.top.equalTo(mapView.snp.bottom)
-            make.leading.trailing.equalToSuperview()
-            make.bottom.equalToSuperview()
+        let collectionView = collectionView
+        view.addSubview(collectionView)
+        collectionView.snp.makeConstraints { make in
+            make.top.equalTo(mapView.snp.bottom).offset(-100)
+            make.leading.trailing.equalToSuperview().inset(10)
+            make.height.equalTo(300)
         }
-        
     }
 }
+
+// MARK: MKMapViewDelegate
 
 extension ViewController: MKMapViewDelegate {
     
@@ -129,6 +145,8 @@ extension ViewController: MKMapViewDelegate {
         }
     }
 }
+
+//MARK: PHPickerViewControllerDelegate, UIImagePickerControllerDelegate
 
 extension ViewController: PHPickerViewControllerDelegate {
     
@@ -157,3 +175,33 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         self.addAnnotation(image: image)
     }
 }
+
+extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        pinCells.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PinCollectionViewCell", for: indexPath) as? PinCollectionViewCell {
+            cell.setData(pinCell: pinCells[indexPath.item])
+            if indexPath.item == 0 {
+                //transform(cell)
+            }
+            return cell
+        }
+        
+        return UICollectionViewCell()
+    }
+}
+
+// MARK: UICollectionViewDelegateFlowLayout
+
+extension ViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        return .init(width: 200, height: 200)
+    }
+}
+
+
