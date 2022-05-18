@@ -13,6 +13,10 @@
 		4DBBB26F281C3F96006B8236 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBB26D281C3F96006B8236 /* Main.storyboard */; };
 		4DBBB271281C3F99006B8236 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBB270281C3F99006B8236 /* Assets.xcassets */; };
 		4DBBB274281C3F99006B8236 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBB272281C3F99006B8236 /* LaunchScreen.storyboard */; };
+		CCE8C8C7283401F5000FB28B /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE8C8C6283401F5000FB28B /* CustomAnnotation.swift */; };
+		CCE8C8C928340237000FB28B /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE8C8C828340237000FB28B /* CustomAnnotationView.swift */; };
+		CCE8C8CD28355A58000FB28B /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE8C8CB28355A58000FB28B /* CustomCollectionViewCell.swift */; };
+		CCE8C8CE28355A58000FB28B /* CustomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCE8C8CC28355A58000FB28B /* CustomCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		4DBBB270281C3F99006B8236 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DBBB273281C3F99006B8236 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4DBBB275281C3F99006B8236 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCE8C8C6283401F5000FB28B /* CustomAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
+		CCE8C8C828340237000FB28B /* CustomAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
+		CCE8C8CB28355A58000FB28B /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		CCE8C8CC28355A58000FB28B /* CustomCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,12 +67,24 @@
 				4DBBB267281C3F96006B8236 /* AppDelegate.swift */,
 				4DBBB269281C3F96006B8236 /* SceneDelegate.swift */,
 				4DBBB26B281C3F96006B8236 /* ViewController.swift */,
+				CCE8C8CA283559D9000FB28B /* Cell */,
 				4DBBB26D281C3F96006B8236 /* Main.storyboard */,
 				4DBBB270281C3F99006B8236 /* Assets.xcassets */,
 				4DBBB272281C3F99006B8236 /* LaunchScreen.storyboard */,
 				4DBBB275281C3F99006B8236 /* Info.plist */,
+				CCE8C8C6283401F5000FB28B /* CustomAnnotation.swift */,
+				CCE8C8C828340237000FB28B /* CustomAnnotationView.swift */,
 			);
 			path = homework_camera_collection;
+			sourceTree = "<group>";
+		};
+		CCE8C8CA283559D9000FB28B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CCE8C8CB28355A58000FB28B /* CustomCollectionViewCell.swift */,
+				CCE8C8CC28355A58000FB28B /* CustomCollectionViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +148,7 @@
 				4DBBB274281C3F99006B8236 /* LaunchScreen.storyboard in Resources */,
 				4DBBB271281C3F99006B8236 /* Assets.xcassets in Resources */,
 				4DBBB26F281C3F96006B8236 /* Main.storyboard in Resources */,
+				CCE8C8CE28355A58000FB28B /* CustomCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,8 +160,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DBBB26C281C3F96006B8236 /* ViewController.swift in Sources */,
+				CCE8C8CD28355A58000FB28B /* CustomCollectionViewCell.swift in Sources */,
+				CCE8C8C928340237000FB28B /* CustomAnnotationView.swift in Sources */,
 				4DBBB268281C3F96006B8236 /* AppDelegate.swift in Sources */,
 				4DBBB26A281C3F96006B8236 /* SceneDelegate.swift in Sources */,
+				CCE8C8C7283401F5000FB28B /* CustomAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
