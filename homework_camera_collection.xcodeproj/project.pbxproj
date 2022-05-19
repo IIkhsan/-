@@ -13,6 +13,8 @@
 		4DBBB26F281C3F96006B8236 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBB26D281C3F96006B8236 /* Main.storyboard */; };
 		4DBBB271281C3F99006B8236 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBB270281C3F99006B8236 /* Assets.xcassets */; };
 		4DBBB274281C3F99006B8236 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBB272281C3F99006B8236 /* LaunchScreen.storyboard */; };
+		A333ECE3281D676100B70AE8 /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A333ECE2281D676100B70AE8 /* CustomAnnotation.swift */; };
+		A333ECE6281D8D8E00B70AE8 /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A333ECE5281D8D8E00B70AE8 /* CustomAnnotationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		4DBBB270281C3F99006B8236 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DBBB273281C3F99006B8236 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4DBBB275281C3F99006B8236 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A333ECE2281D676100B70AE8 /* CustomAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
+		A333ECE5281D8D8E00B70AE8 /* CustomAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,49 @@
 		4DBBB266281C3F96006B8236 /* homework_camera_collection */ = {
 			isa = PBXGroup;
 			children = (
+				A333ECE0281D66BC00B70AE8 /* MapScreen */,
+				A333ECDE281D666C00B70AE8 /* Resources */,
+				A333ECDD281D665200B70AE8 /* Model */,
 				4DBBB267281C3F96006B8236 /* AppDelegate.swift */,
 				4DBBB269281C3F96006B8236 /* SceneDelegate.swift */,
-				4DBBB26B281C3F96006B8236 /* ViewController.swift */,
 				4DBBB26D281C3F96006B8236 /* Main.storyboard */,
-				4DBBB270281C3F99006B8236 /* Assets.xcassets */,
-				4DBBB272281C3F99006B8236 /* LaunchScreen.storyboard */,
-				4DBBB275281C3F99006B8236 /* Info.plist */,
 			);
 			path = homework_camera_collection;
+			sourceTree = "<group>";
+		};
+		A333ECDD281D665200B70AE8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A333ECE2281D676100B70AE8 /* CustomAnnotation.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A333ECDE281D666C00B70AE8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4DBBB272281C3F99006B8236 /* LaunchScreen.storyboard */,
+				4DBBB275281C3F99006B8236 /* Info.plist */,
+				4DBBB270281C3F99006B8236 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A333ECE0281D66BC00B70AE8 /* MapScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A333ECE4281D8D7900B70AE8 /* View */,
+				4DBBB26B281C3F96006B8236 /* ViewController.swift */,
+			);
+			path = MapScreen;
+			sourceTree = "<group>";
+		};
+		A333ECE4281D8D7900B70AE8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A333ECE5281D8D8E00B70AE8 /* CustomAnnotationView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +177,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DBBB26C281C3F96006B8236 /* ViewController.swift in Sources */,
+				A333ECE6281D8D8E00B70AE8 /* CustomAnnotationView.swift in Sources */,
+				A333ECE3281D676100B70AE8 /* CustomAnnotation.swift in Sources */,
 				4DBBB268281C3F96006B8236 /* AppDelegate.swift in Sources */,
 				4DBBB26A281C3F96006B8236 /* SceneDelegate.swift in Sources */,
 			);
@@ -289,9 +329,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 939KD425D9;
+				DEVELOPMENT_TEAM = SB3B62C7R7;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = homework_camera_collection/Info.plist;
+				INFOPLIST_FILE = homework_camera_collection/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -317,9 +357,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 939KD425D9;
+				DEVELOPMENT_TEAM = SB3B62C7R7;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = homework_camera_collection/Info.plist;
+				INFOPLIST_FILE = homework_camera_collection/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
