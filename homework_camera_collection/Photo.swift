@@ -7,6 +7,9 @@
 
 import Foundation
 import UIKit
+
+// MARK: - Photo object
+
 struct Photo {
     let image: UIImage
     let date: String

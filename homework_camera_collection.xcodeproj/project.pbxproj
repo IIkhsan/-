@@ -66,6 +66,7 @@
 		4DBBB266281C3F96006B8236 /* homework_camera_collection */ = {
 			isa = PBXGroup;
 			children = (
+				4DBBB275281C3F99006B8236 /* Info.plist */,
 				EB0E9E752835E4D600426C12 /* Storyboard */,
 				EB0E9E742835E49B00426C12 /* Resources */,
 				4DBBB26B281C3F96006B8236 /* ViewController.swift */,
@@ -82,7 +83,6 @@
 			isa = PBXGroup;
 			children = (
 				4DBBB270281C3F99006B8236 /* Assets.xcassets */,
-				4DBBB275281C3F99006B8236 /* Info.plist */,
 				4DBBB267281C3F96006B8236 /* AppDelegate.swift */,
 				4DBBB269281C3F96006B8236 /* SceneDelegate.swift */,
 			);

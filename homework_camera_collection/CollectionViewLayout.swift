@@ -7,7 +7,13 @@
 
 import Foundation
 import UIKit
+
+// MARK: - CollectionViewLayout class
+
 class CollectionViewLayout: UICollectionViewLayout {
+    
+    // MARK: - Variables
+    
     var collectionViewAttributes: [UICollectionViewLayoutAttributes] = []
     var cellHeight: CGFloat = 200
     var cellWidth: CGFloat = 220
@@ -36,6 +42,9 @@ class CollectionViewLayout: UICollectionViewLayout {
         return collectionView.numberOfItems(inSection: 0)
     }
     
+    // MARK: - Override methods
+
+    
     override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
         return true
     }
@@ -62,7 +71,6 @@ class CollectionViewLayout: UICollectionViewLayout {
     
     override var collectionViewContentSize : CGSize {
 //        print("\(collectionViewWidth) /// \(collectionViewHeight)")
-        
         return CGSize(width: collectionViewWidth, height: collectionViewHeight)
     }
     
@@ -78,7 +86,6 @@ class CollectionViewLayout: UICollectionViewLayout {
         let count = collectionView.numberOfItems(inSection: 0)
         for item in 0..<count {
             let indexPath = IndexPath(item: item, section: 0)
-            let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
             offset = Int(cellWidth) * item
             let frame = CGRect(x: CGFloat(offset),
                                y: 0,

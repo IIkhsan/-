@@ -16,16 +16,20 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    // MARK: - Variables
+
     var photos: [Photo] = []
     var photosAnnotations: [CustomAnnotation] = []
     let layout = CollectionViewLayout()
     
+    
+    // MARK: - ViewDidLoad
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "ButtonName", style: .done, target: self, action: #selector(setNewPhoto(_:)))
         collectionView.dataSource = self
-        collectionView.delegate = self
         mapView.delegate = self
         collectionView.backgroundColor = .clear
         collectionView.decelerationRate = .normal
@@ -33,6 +37,9 @@ class ViewController: UIViewController {
         collectionView.reloadData()
         configureMapView()
     }
+    
+    
+    
    
     private func configureMapView() {
         mapView.register(CustomAnnotationView.self, forAnnotationViewWithReuseIdentifier: NSStringFromClass(CustomAnnotation.self))
@@ -57,13 +64,11 @@ class ViewController: UIViewController {
                 self.collectionView.reloadData()
                 self.mapView.addAnnotation(imageAnnotation)
             }
-        
-      
-        
-        print(photos.count)
-        
         }
     
+    
+    // MARK: - Methods to get Photo from device
+
     private func getPhotoFromLibrary() {
         var config = PHPickerConfiguration(photoLibrary: .shared())
         config.selectionLimit = 1
@@ -81,8 +86,9 @@ class ViewController: UIViewController {
        }
     
     
+    // MARK: - @IBAction add button
+
     @IBAction func setNewPhoto(_ sender: UIBarButtonItem) {
-        print("12313")
         let alert = UIAlertController()
                alert.addAction(UIAlertAction(title: "Library", style: .default, handler: { _ in
                    self.getPhotoFromLibrary()
@@ -99,24 +105,25 @@ class ViewController: UIViewController {
     
 }
 
+// MARK: - MKMapViewDelegate extension
+
 extension ViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard !annotation.isKind(of: MKUserLocation.self) else {
             return nil
         }
-        
         if let annotation = annotation as? CustomAnnotation {
-            print(1)
             let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: NSStringFromClass(CustomAnnotation.self), for: annotation)
             return annotationView
         } else {
             return nil
         }
-        
     }
-
 }
+
+// MARK: - PHPickerViewControllerDelegate
+
 extension ViewController: PHPickerViewControllerDelegate {
     
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
@@ -128,20 +135,18 @@ extension ViewController: PHPickerViewControllerDelegate {
                 guard let image = reading as? UIImage, error == nil else {
                     return
                 }
-                
                 self?.addAnnotation(image: image)
             }
         }
     }
-
-    
 }
+
+
+// MARK: - UIImagePickerControllerDelegate, UINavigationControllerDelegate extensions
 
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
         picker.dismiss(animated: true, completion: nil)
-
         print("dasdasdadaddsasadsdasdasdasd")
         guard let image = info[.editedImage] as? UIImage else {
             return
@@ -150,8 +155,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
     }
 }
 
-extension ViewController: UICollectionViewDelegate {}
-
+// MARK: - UICollectionViewDataSource extension
 
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -160,17 +164,12 @@ extension ViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        print("configggggggggggg")
-
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? CollectionViewCell {
             let photo = photos[indexPath.item]
             cell.configure(image: photo.image, date: photo.date, location: photo.location)
             print("config")
             return cell
         }
-        
         return UICollectionViewCell()
     }
 }
-
-
