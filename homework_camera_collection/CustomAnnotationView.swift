@@ -1,3 +1,10 @@
+//
+//  CustomAnnotationView.swift
+//  homework_camera_collection
+//
+//  Created by Лилия Комиссарова on 16.05.2022.
+//
+
 import UIKit
 import MapKit
 
