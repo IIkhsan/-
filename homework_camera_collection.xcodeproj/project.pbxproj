@@ -13,6 +13,9 @@
 		4DBBB26F281C3F96006B8236 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBB26D281C3F96006B8236 /* Main.storyboard */; };
 		4DBBB271281C3F99006B8236 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBB270281C3F99006B8236 /* Assets.xcassets */; };
 		4DBBB274281C3F99006B8236 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBB272281C3F99006B8236 /* LaunchScreen.storyboard */; };
+		CFA23B5D2826A0CD0028DAD7 /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA23B5C2826A0CD0028DAD7 /* CustomAnnotationView.swift */; };
+		CFA23B5F2826A2DB0028DAD7 /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA23B5E2826A2DB0028DAD7 /* CustomAnnotation.swift */; };
+		CFA23B612826B1660028DAD7 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA23B602826B1660028DAD7 /* PhotoCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		4DBBB270281C3F99006B8236 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DBBB273281C3F99006B8236 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4DBBB275281C3F99006B8236 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFA23B5C2826A0CD0028DAD7 /* CustomAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
+		CFA23B5E2826A2DB0028DAD7 /* CustomAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
+		CFA23B602826B1660028DAD7 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,9 @@
 				4DBBB267281C3F96006B8236 /* AppDelegate.swift */,
 				4DBBB269281C3F96006B8236 /* SceneDelegate.swift */,
 				4DBBB26B281C3F96006B8236 /* ViewController.swift */,
+				CFA23B602826B1660028DAD7 /* PhotoCollectionViewCell.swift */,
+				CFA23B5C2826A0CD0028DAD7 /* CustomAnnotationView.swift */,
+				CFA23B5E2826A2DB0028DAD7 /* CustomAnnotation.swift */,
 				4DBBB26D281C3F96006B8236 /* Main.storyboard */,
 				4DBBB270281C3F99006B8236 /* Assets.xcassets */,
 				4DBBB272281C3F99006B8236 /* LaunchScreen.storyboard */,
@@ -140,7 +149,10 @@
 			files = (
 				4DBBB26C281C3F96006B8236 /* ViewController.swift in Sources */,
 				4DBBB268281C3F96006B8236 /* AppDelegate.swift in Sources */,
+				CFA23B5F2826A2DB0028DAD7 /* CustomAnnotation.swift in Sources */,
+				CFA23B5D2826A0CD0028DAD7 /* CustomAnnotationView.swift in Sources */,
 				4DBBB26A281C3F96006B8236 /* SceneDelegate.swift in Sources */,
+				CFA23B612826B1660028DAD7 /* PhotoCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
