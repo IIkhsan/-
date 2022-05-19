@@ -2,7 +2,7 @@
 //  PhotoCollectionViewCell.swift
 //  homework_camera_collection
 //
-//  Created by Рустем on 07.05.2022.
+//  Created by Лилия Комиссарова on 16.05.2022.
 //
 
 import UIKit
