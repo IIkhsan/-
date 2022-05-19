@@ -19,7 +19,7 @@ class CollectionViewCell: UICollectionViewCell {
     
     func configure(image: UIImage, date: String, location: String) {
         print("CELLLLlllLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL")
-
+        backgroundColor = .blue
         backgroundView?.layer.cornerRadius = 15
         self.photo.image = image
         self.photo.contentMode = .scaleAspectFill
@@ -28,11 +28,7 @@ class CollectionViewCell: UICollectionViewCell {
         self.location.text = location
         self.date.adjustsFontSizeToFitWidth = true
         self.location.adjustsFontSizeToFitWidth = true
-        self.date.numberOfLines = 0
-        self.location.numberOfLines = 0
-        
+        self.date.numberOfLines = 1
+        self.location.numberOfLines = 1
     }
-    
-
-    
 }

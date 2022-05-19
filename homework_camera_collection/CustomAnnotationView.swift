@@ -15,7 +15,7 @@ class CustomAnnotationView: MKAnnotationView {
     private let interItemSpacing = CGFloat(10)
     private let maxContentWidth = CGFloat(90)
     private let contentInsets = UIEdgeInsets(top: 10, left: 30, bottom: 20, right: 20)
-    
+        
     private let blurEffect = UIBlurEffect(style: .systemThickMaterial)
     
     private lazy var backgroundMaterial: UIVisualEffectView = {
@@ -83,6 +83,13 @@ class CustomAnnotationView: MKAnnotationView {
         labelVibrancyView.heightAnchor.constraint(equalTo: label.heightAnchor).isActive = true
         labelVibrancyView.leadingAnchor.constraint(equalTo: label.leadingAnchor).isActive = true
         labelVibrancyView.topAnchor.constraint(equalTo: label.topAnchor).isActive = true
+        displayPriority = .defaultHigh
+        collisionMode = .circle
+
+        frame = CGRect(x: 0, y: 0, width: 40, height: 50)
+        centerOffset = CGPoint(x: 0, y: -frame.size.height / 2)
+
+       
     }
     
     required init?(coder aDecoder: NSCoder) {

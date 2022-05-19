@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var photos: [Photo] = []
+    var photosAnnotations: [CustomAnnotation] = []
     let layout = CollectionViewLayout()
     
     override func viewDidLoad() {
@@ -26,54 +27,13 @@ class ViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         mapView.delegate = self
-//        collectionView.collectionViewLayout = CollectionViewLayout()
-        photos.append(Photo(image: UIImage(named: "DrogbA")!, date: "1231312", location: "sdfsfsdf"))
-        photos.append(Photo(image: UIImage(named: "DrogbA")!, date: "1231312", location: "sdfsfsdf"))
-        photos.append(Photo(image: UIImage(named: "DrogbA")!, date: "1231312", location: "sdfsfsdf"))
-        photos.append(Photo(image: UIImage(named: "DrogbA")!, date: "1231312", location: "sdfsfsdf"))
-        photos.append(Photo(image: UIImage(named: "DrogbA")!, date: "1231312", location: "sdfsfsdf"))
+        collectionView.backgroundColor = .clear
+        collectionView.decelerationRate = .normal
+        collectionView.contentInsetAdjustmentBehavior = .never
         collectionView.reloadData()
-        
         configureMapView()
-        configCollectionView()
     }
-//    private func configureCollectionView() {
-//        collectionView.backgroundColor = .clear
-//        collectionView.decelerationRate = .fast
-//        collectionView.contentInsetAdjustmentBehavior = .never
-//        collectionView.reloadData()
-////        collectionView.collectionViewLayout = layout
-////        collectionView.contentInset = UIEdgeInsets(top: 0.0, left: 30.0, bottom: 0.0, right: itemWidth * 2)
-////
-////        collectionView.dataSource = self
-////        collectionView.delegate = self
-////
-////        layout.scrollDirection = .horizontal
-////        layout.minimumLineSpacing = 50.0
-////        layout.minimumInteritemSpacing = 50.0
-////        layout.itemSize.width = itemWidth
-////        layout.sectionInset = UIEdgeInsets(top: 0.0, left: 10.0, bottom: 0.0, right: 0.0)
-//
-//    }
-    
-    private func configCollectionView() {
-        collectionView.backgroundColor = UIColor.clear
-        collectionView.decelerationRate = .fast
-//        collectionView.contentInsetAdjustmentBehavior = .never
-    ;
-        collectionView.collectionViewLayout = layout
-//        collectionView.contentInset = UIEdgeInsets(top: 0.0, left: 30.0, bottom: 0.0, right: 100 * 2)
-        
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        
-//        layout.scrollDirection = .horizontal
-//        layout.minimumLineSpacing = 50.0
-//        layout.minimumInteritemSpacing = 50.0
-//        layout.itemSize.width = 100
-//        layout.sectionInset = UIEdgeInsets(top: 0.0, left: 10.0, bottom: 0.0, right: 0.0)
-//
-    }
+   
     private func configureMapView() {
         mapView.register(CustomAnnotationView.self, forAnnotationViewWithReuseIdentifier: NSStringFromClass(CustomAnnotation.self))
         let coordinator = CLLocationCoordinate2D(latitude: 55.805569,longitude: 48.943055)
@@ -92,10 +52,14 @@ class ViewController: UIViewController {
             imageAnnotation.image = image
         
         photos.append(Photo(image: image, date: Date().formatted(.dateTime), location: "\(mapView.centerCoordinate.latitude) / \(mapView.centerCoordinate.longitude)"))
+        photosAnnotations.append(CustomAnnotation(coordinate: center))
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
                 self.mapView.addAnnotation(imageAnnotation)
             }
+        
+      
+        
         print(photos.count)
         
         }
@@ -132,32 +96,6 @@ class ViewController: UIViewController {
                present(alert, animated: true, completion: nil)
     }
     
-
-    @IBAction func SelectPhotoButtonAction(_ sender: Any) {
-        
-    }
-    
-//    private func transform(_ cell: UICollectionViewCell, isEffect: Bool = true) {
-//        if !isEffect {
-//            cell.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
-//            return
-//        }
-//
-//        UIView.animate(withDuration: 0.2) {
-//            cell.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
-//        }
-//
-//        collectionView.visibleCells.forEach { otherCell in
-//            if let indexPath = collectionView.indexPath(for: otherCell) {
-//                if indexPath.item != layout.currentPage {
-//                    UIView.animate(withDuration: 0.2) {
-//                        otherCell.transform = .identity
-//                    }
-//                }
-//            }
-//        }
-//    }
-    
     
 }
 
@@ -167,13 +105,17 @@ extension ViewController: MKMapViewDelegate {
         guard !annotation.isKind(of: MKUserLocation.self) else {
             return nil
         }
+        
         if let annotation = annotation as? CustomAnnotation {
+            print(1)
             let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: NSStringFromClass(CustomAnnotation.self), for: annotation)
             return annotationView
         } else {
             return nil
         }
+        
     }
+
 }
 extension ViewController: PHPickerViewControllerDelegate {
     
@@ -191,29 +133,7 @@ extension ViewController: PHPickerViewControllerDelegate {
             }
         }
     }
-//
-//    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
-//        picker.dismiss(animated: true, completion: nil)
-//        results.forEach({result in
-//            result.itemProvider.loadObject(ofClass: UIImage.self, completionHandler: { reading, error in
-//                guard let image = reading as? UIImage, error == nil else {
-//                    return
-//                }
-//                let center = self.mapView.centerCoordinate
-//                let imageAnnotation = CustomAnnotation(coordinate: center)
-//                imageAnnotation.title = Date().formatted()
-//                imageAnnotation.image = image
-//                DispatchQueue.main.async {
-//                    self.collectionView.reloadData()
-//                    self.mapView.addAnnotation(imageAnnotation)
-//
-//                }
-////                print(image)
-//
-//            })
-//        })
-//    }
-    
+
     
 }
 
@@ -235,6 +155,7 @@ extension ViewController: UICollectionViewDelegate {}
 
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print("data")
         return photos.count
     }
     
@@ -250,6 +171,6 @@ extension ViewController: UICollectionViewDataSource {
         
         return UICollectionViewCell()
     }
-
 }
+
 

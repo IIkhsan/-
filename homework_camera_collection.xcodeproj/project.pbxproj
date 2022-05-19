@@ -66,13 +66,9 @@
 		4DBBB266281C3F96006B8236 /* homework_camera_collection */ = {
 			isa = PBXGroup;
 			children = (
-				4DBBB267281C3F96006B8236 /* AppDelegate.swift */,
-				4DBBB269281C3F96006B8236 /* SceneDelegate.swift */,
+				EB0E9E752835E4D600426C12 /* Storyboard */,
+				EB0E9E742835E49B00426C12 /* Resources */,
 				4DBBB26B281C3F96006B8236 /* ViewController.swift */,
-				4DBBB26D281C3F96006B8236 /* Main.storyboard */,
-				4DBBB270281C3F99006B8236 /* Assets.xcassets */,
-				4DBBB272281C3F99006B8236 /* LaunchScreen.storyboard */,
-				4DBBB275281C3F99006B8236 /* Info.plist */,
 				EB0E9E662835614500426C12 /* CustomAnnotationView.swift */,
 				EB0E9E682835617A00426C12 /* CustomAnnotation.swift */,
 				EB0E9E6A2835756000426C12 /* CollectionViewCell.swift */,
@@ -80,6 +76,26 @@
 				EB0E9E6E2835815800426C12 /* CollectionViewLayout.swift */,
 			);
 			path = homework_camera_collection;
+			sourceTree = "<group>";
+		};
+		EB0E9E742835E49B00426C12 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4DBBB270281C3F99006B8236 /* Assets.xcassets */,
+				4DBBB275281C3F99006B8236 /* Info.plist */,
+				4DBBB267281C3F96006B8236 /* AppDelegate.swift */,
+				4DBBB269281C3F96006B8236 /* SceneDelegate.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EB0E9E752835E4D600426C12 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				4DBBB26D281C3F96006B8236 /* Main.storyboard */,
+				4DBBB272281C3F99006B8236 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
