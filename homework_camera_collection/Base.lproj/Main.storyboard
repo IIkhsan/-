@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,20 +20,62 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="i7u-r3-y92">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </mapView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5Wx-Js-4Md">
+                                <rect key="frame" x="0.0" y="640" width="414" height="212"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZkZ-UD-aRo">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="wBu-HW-cEz">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ZCP-D1-a2K">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17X-pu-NG8">
+                                <rect key="frame" x="282" y="54" width="124" height="31"/>
+                                <color key="backgroundColor" red="1" green="0.49396600810000002" blue="0.11544384539999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Add photo"/>
+                                <connections>
+                                    <action selector="setPhotoToPlace:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5s7-Zq-Q8X"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="i7u-r3-y92" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8hA-D8-CUk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5Wx-Js-4Md" secondAttribute="bottom" constant="10" id="CQy-vS-iEl"/>
+                            <constraint firstItem="17X-pu-NG8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="Gy1-w8-MKE"/>
+                            <constraint firstItem="17X-pu-NG8" firstAttribute="width" secondItem="i7u-r3-y92" secondAttribute="width" multiplier="0.3" id="Jpu-g1-nlU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5Wx-Js-4Md" secondAttribute="trailing" id="SbV-Uh-zzc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="17X-pu-NG8" secondAttribute="trailing" constant="8" id="T1S-lO-OtA"/>
+                            <constraint firstItem="5Wx-Js-4Md" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ULv-pl-hQ5"/>
+                            <constraint firstItem="5Wx-Js-4Md" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.236607" id="XrX-OV-eh2"/>
                             <constraint firstItem="i7u-r3-y92" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="lA1-D6-U6a"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="i7u-r3-y92" secondAttribute="bottom" id="mXP-2m-VtM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="i7u-r3-y92" secondAttribute="trailing" id="ynm-8M-EyV"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addButton" destination="17X-pu-NG8" id="l6Y-uO-Ies"/>
+                        <outlet property="collectionView" destination="5Wx-Js-4Md" id="akA-NE-qZX"/>
+                        <outlet property="mapView" destination="i7u-r3-y92" id="3XS-2n-obb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="20" y="98"/>
+            <point key="canvasLocation" x="18.840579710144929" y="97.767857142857139"/>
         </scene>
     </scenes>
     <resources>
