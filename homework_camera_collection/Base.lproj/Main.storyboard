@@ -19,11 +19,11 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="w1H-Zv-MQf">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                             </mapView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yIx-EO-3C6">
-                                <rect key="frame" x="0.0" y="712" width="414" height="150"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yIx-EO-3C6">
+                                <rect key="frame" x="0.0" y="622" width="414" height="250"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="Hq5-47-Uah"/>
+                                    <constraint firstAttribute="height" constant="250" id="Hq5-47-Uah"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UVR-9e-EiU">
                                     <size key="itemSize" width="128" height="128"/>
@@ -38,6 +38,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="w1H-Zv-MQf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3ir-UW-Auz"/>
+                            <constraint firstItem="yIx-EO-3C6" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="10" id="5DK-aI-LKu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="w1H-Zv-MQf" secondAttribute="trailing" id="AJ3-H8-MbO"/>
                             <constraint firstItem="w1H-Zv-MQf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="G0p-Zp-rmC"/>
                             <constraint firstItem="yIx-EO-3C6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UJD-yu-f2G"/>

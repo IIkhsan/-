@@ -51,8 +51,8 @@ class ViewController: UIViewController {
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 20.0
         layout.minimumInteritemSpacing = 20.0
-        layout.itemSize.width = 118
-        layout.itemSize.height = 168
+        layout.itemSize.width = 120
+        layout.itemSize.height = 200
                
         layout.sectionInset = UIEdgeInsets(top: 0.0, left: 10.0, bottom: 0.0, right: 0.0)
     }
@@ -100,22 +100,22 @@ class ViewController: UIViewController {
     
     private func addAnnotation(image: UIImage) {
         let center = self.mapView.centerCoordinate
-        let imageAnnotation = CustomAnnotation(coordinate: center)
+        let annotation = CustomAnnotation(coordinate: center)
 
         let currentDate = Date()
         let annotationDate = "Date: " + dateFormatter.string(from: currentDate)
         let annotationCoordinate = String(round(1000 * center.longitude) / 1000) + " " + String(round(1000 * center.latitude) / 1000)
 
-        imageAnnotation.title = annotationDate
-        imageAnnotation.subtitle = annotationCoordinate
-        imageAnnotation.image = image
+        annotation.title = annotationDate
+        annotation.subtitle = annotationCoordinate
+        annotation.image = image
 
-        let newCard = SqareModel(image: image, date: annotationDate, coordinate: annotationCoordinate)
-        cards.append(newCard)
+        let card = SqareModel(image: image, date: annotationDate, coordinate: annotationCoordinate)
+        cards.append(card)
             
         DispatchQueue.main.async { [weak self] in
             self?.collectionView.reloadData()
-            self?.mapView.addAnnotation(imageAnnotation)
+            self?.mapView.addAnnotation(annotation)
         }
     }
 }
@@ -213,6 +213,8 @@ extension ViewController: UIScrollViewDelegate {
     }
     
     func createLargeCell(cell: UICollectionViewCell) {
+        
+        cell.contentView.layer.cornerRadius = 24
         
         UIView.animate(withDuration: 0.2) {
             cell.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
