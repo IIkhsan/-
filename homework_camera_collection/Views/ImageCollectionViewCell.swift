@@ -10,7 +10,10 @@ import UIKit
 class ImageCollectionViewCell: UICollectionViewCell {
     private lazy var imageView: UIImageView = {
         let image = UIImageView()
-        image.contentMode = .scaleAspectFit
+        image.contentMode = .scaleAspectFill
+        image.clipsToBounds = true
+        image.layer.cornerRadius = 10
+        image.layer.masksToBounds = true
         return image
     }()
     
@@ -39,9 +42,6 @@ class ImageCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.backgroundColor = .systemRed
-        contentView.layer.cornerRadius = 10
-        imageView.layer.cornerRadius = 10
-        imageView.layer.masksToBounds = true
         contentView.layer.masksToBounds = true
         setupViews()
     }

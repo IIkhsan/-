@@ -34,10 +34,9 @@ class CalloutView: UIView {
     titleLabel.font = UIFont.boldSystemFont(ofSize: 20)
     titleLabel.text = annotation.title
     addSubview(titleLabel)
-    titleLabel.translatesAutoresizingMaskIntoConstraints = false
-    titleLabel.topAnchor.constraint(equalTo: topAnchor).isActive = true
-    titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-    titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+      titleLabel.snp.makeConstraints { make in
+          make.left.top.right.equalTo(self)
+      }
   }
   
   private func setupSubtitle() {
@@ -45,10 +44,10 @@ class CalloutView: UIView {
     subtitleLabel.textColor = .gray
     subtitleLabel.text = annotation.subtitle
     addSubview(subtitleLabel)
-    subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
-    subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8).isActive = true
-    subtitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-    subtitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+      subtitleLabel.snp.makeConstraints { make in
+          make.top.equalTo(titleLabel.snp.bottom).offset(8)
+          make.left.right.equalTo(self)
+      }
   }
   
   private func setupImageView() {
@@ -56,12 +55,11 @@ class CalloutView: UIView {
     imageView.contentMode = .scaleAspectFill
     imageView.clipsToBounds = true
     addSubview(imageView)
-    imageView.translatesAutoresizingMaskIntoConstraints = false
-    imageView.topAnchor.constraint(equalTo: subtitleLabel.bottomAnchor, constant: 8).isActive = true
-    imageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-    imageView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-    imageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-    imageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
-    imageView.widthAnchor.constraint(equalToConstant: 280).isActive = true
+      imageView.snp.makeConstraints { make in
+          make.top.equalTo(subtitleLabel.snp.bottom).offset(8)
+          make.leading.trailing.bottom.equalTo(self)
+          make.height.equalTo(200)
+          make.width.equalTo(280)
+      }
   }
 }
