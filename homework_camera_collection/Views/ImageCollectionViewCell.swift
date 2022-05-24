@@ -42,6 +42,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.backgroundColor = .systemRed
+        contentView.layer.cornerRadius = 15
         contentView.layer.masksToBounds = true
         setupViews()
     }
@@ -51,7 +52,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
     
     private func setupViews() {
         contentView.addSubview(stackView)
-        stackView.frame = CGRect(x: contentView.frame.origin.x + 8, y: contentView.frame.origin.y + 8, width: contentView.frame.width - 8, height: contentView.frame.height - 8)
+        stackView.frame = CGRect(x: contentView.bounds.origin.x + 8, y: contentView.bounds.origin.y + 8, width: contentView.bounds.width - 16, height: contentView.bounds.height - 16)
     }
     
     public func configure(image: UIImage?, title: String?, subtitle: String?) {
