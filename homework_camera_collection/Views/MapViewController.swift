@@ -9,7 +9,7 @@ import UIKit
 import MapKit
 import SnapKit
 
-class ViewController: UIViewController {
+class MapViewController: UIViewController {
     // MARK: private variables
     let mapManager: MapManager = .init()
     
@@ -25,9 +25,11 @@ class ViewController: UIViewController {
         // Item
         let item: NSCollectionLayoutItem = .init(layoutSize: .init(widthDimension: .fractionalWidth(1/3), heightDimension: .fractionalHeight(1)))
         item.contentInsets = .init(top: 0, leading: .itemInset, bottom: 0, trailing: .itemInset)
+       
         // Group
         let groupSize: NSCollectionLayoutSize = .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalWidth(1/3))
         let group: NSCollectionLayoutGroup = .horizontal(layoutSize: groupSize, subitems: [item])
+        
         // Section
         let section: NSCollectionLayoutSection = .init(group: group)
         section.orthogonalScrollingBehavior = .continuous
@@ -99,7 +101,7 @@ class ViewController: UIViewController {
 }
 
 // MARK: - UIImagePickerControllerDelegate & UINavigationControllerDelegate
-extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension MapViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func showImagePicker(_ sourceType: UIImagePickerController.SourceType?) {
         let imagePickerVC = UIImagePickerController()
         imagePickerVC.delegate = self
@@ -118,7 +120,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
 }
 
 // MARK: - UICollectionViewDataSource
-extension ViewController: UICollectionViewDataSource {
+extension MapViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         mapManager.annotations.count
     }

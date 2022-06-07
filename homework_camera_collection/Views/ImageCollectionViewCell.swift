@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// Cell View for CollectionView floating at the bottom of the map
 class ImageCollectionViewCell: UICollectionViewCell {
     private lazy var imageView: UIImageView = {
         let image = UIImageView()
